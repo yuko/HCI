@@ -1,0 +1,6 @@
+
+/* todo - center align the back button */
+.center-align * { margin: 0 auto; }
+.right-align, .right-align * { color: orange; }
+span.add-preview-key {}
+h2.warning { color: red; }

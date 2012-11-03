@@ -1,0 +1,720 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>Money track</title> 
+        <link rel="stylesheet" type="text/css" href="http://dl.dropbox.com/u/7834011/HCI/main.css" />
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            google.load('visualization', '1', {packages: ['corechart']});
+        </script>
+        <script type="text/javascript">
+            function drawBalanceByCard() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Card/Bank Acct', 'Owe', 'Limit'],
+                    ['Visa #1234',  289.67, 1200.00],
+                    ['Amex #5678',  134.50, 3000.00],
+                    ['Citibank',  1316.55, 4000.00],
+                ]);
+                                                                                          
+                new google.visualization.ColumnChart(
+                    document.getElementById('chart-balance-by-card')).draw(data,
+                        { title:"Glance - balance on all cards", width:300, height:200, }
+                );  
+            }
+            google.setOnLoadCallback(drawBalanceByCard);
+
+            function drawBalanceByCate() {
+                var data = google.visualization.arrayToDataTable([
+                    ['Category', 'Amount'],
+                    ['Utility',  215.67],
+                    ['Transportation',  134.50],
+                    ['Food',  86.23],
+                ]);
+                                                                                          
+                new google.visualization.ColumnChart(
+                    document.getElementById('chart-balance-by-cate')).draw(data,
+                        { title:"Glance - balance on all categories", width:300, height:200, }
+                );  
+            }
+            google.setOnLoadCallback(drawBalanceByCate);
+        </script>
+    </head> 
+
+    <body>
+
+        <div data-role="page" id="index" data-title="Money Tracker">
+            <div data-role="content">
+                <h2>Welcome!</h2>
+                <p>You are about to see my demo.</p>
+                <p>Even though the layout is designed to support tablet/computer size screens, as this is designed to be a phone app, I recomment you to proceed in a smaller window to get the better experience.</p>
+                <p>Ready?</p>
+
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#" data-role="button" data-inline="true" data-theme="b" onClick="window.open('http://dl.dropbox.com/u/7834011/HCI/index.html#add','mywindow','width=350,height=500');">Open in a new window</a>
+                    <a href="#add" data-role="button" data-inline="true" data-theme="c">Nah, stay in this window</a>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="add" data-title="Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
+                        <li><a href="#view">View</a></li>                                                 
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Add</h2>
+                <h3>Scan Receipt (Step 1 of 5)</h3>
+
+                <div class="right-align"><a href="#add-amount">Or manually enter?</a></div>
+
+                <img src="Receipt.jpg"/>
+
+                <div>
+                    <a href="#add-amount-confirm" data-role="button" data-inline="true" data-rel="popup">Next</a>
+                </div><!-- /buttons -->
+
+                <div data-role="popup" id="add-amount-confirm">
+                    <div data-role="header" data-theme="a" class="ui-corner-top">
+                        <h2>Scanned Amount</h2>
+                    </div>
+                    <div data-role="content">
+                        <P>
+                            <span class="add-preview-key">Amount:</span>
+                            <span class="add-preview-value">$23.76</span>
+                        </p>
+                        <a href="#add-date" data-role="button" data-inline="true" data-theme="b">Next</a>
+                        <p>Actually, as this is a mock, the fuctionality isn't implemented yet. So please be nice and pretend like it was! :o)</p>
+                    </div><!-- /content -->
+                </div><!-- .popup -->
+
+                <div>
+                    <label for="slider-mini" class="ui-hidden-accessible">Input slider:</label>
+                    <input type="range" name="slider-1" id="slider-mini" value="1" min="0" max="100" data-highlight="true" data-mini="true" class="ui-hidden-accessible" class="ui-state-persist"/>
+                </div><!-- /slider -->
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="add-amount" data-title="Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
+                        <li><a href="#view">View</a></li>                                                 
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Add</h2>
+                <h3>How much did you spend? (Step 2 of 5)</h3>
+
+                <div>
+                    <label for="add-amount-text">$</label>
+                    <input type="text" name="add-amount-text" id="add-amount-text" value="" placeholder="00.00"/>
+                </div>
+
+
+                <div>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back">Back</a>
+                    <a href="#add-date" data-role="button" data-inline="true">Next</a>
+                </div><!-- /buttons -->
+
+                <div class="progress-bar">
+                    <label for="slider-mini">Progress: </label>
+                    <input type="range" name="slider-1" id="slider-mini" value="25" min="0" max="100" data-highlight="true" data-mini="true" class="ui-hidden-accessible" class="ui-state-persist"/>
+                </div><!-- /slider -->
+
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="add-date" data-title="Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
+                        <li><a href="#view">View</a></li>                                                 
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Add</h2>
+                <h3>When did you buy? (Step 3 of 5)</h3>
+
+                <div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+                    <label for="date" class="ui-input-text">Date:</label>
+                    <input type="date" name="date" id="date" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset">
+                </div>
+
+                <div>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back">Back</a>
+                    <a href="#add-card" data-role="button" data-inline="true">Next</a>
+                </div><!-- /buttons -->
+
+                <div class="progress-bar">
+                    <label for="slider-mini">Progress: </label>
+                    <input type="range" name="slider-1" id="slider-mini" value="50" min="0" max="100" data-highlight="true" data-mini="true" class="ui-hidden-accessible" class="ui-state-persist"/>
+                </div><!-- /slider -->
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="add-card" data-title="Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
+                        <li><a href="#view">View</a></li>                                                 
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Add</h2>
+                <h3>Which card/bank account did you use? (Step 4 of 5)</h3>
+
+                <div>
+                    <label for="select-choice-0" class="select">Select Card/Bank acct:</label>
+                    <select data-inline="true" name="select-choice-0" id="select-choice-0">
+                        <option>Visa #1234</option>
+                        <option>Amex #5678</option>
+                        <option>Citibank #1234</option>
+                    </select>
+                    <label for="add-card-name">Or add new card:</label>
+                    <input type="text" name="add-card-name" id="add-card-name" value="" placeholder="New Card Name"/>
+                </div>
+
+                <div>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back">Back</a>
+                    <a href="#add-category" data-role="button" data-inline="true">Next</a>
+                </div><!-- /buttons -->
+
+                <div class="progress-bar">
+                    <label for="slider-mini">Progress: </label>
+                    <input type="range" name="slider-1" id="slider-mini" value="75" min="0" max="100" data-highlight="true" data-mini="true" class="ui-hidden-accessible" class="ui-state-persist"/>
+                </div><!-- /slider -->
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="add-category" data-title="Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
+                        <li><a href="#view">View</a></li>                                                 
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Add</h2>
+                <h3>When category does the purchase fall into? (Step 5 of 5)</h3>
+
+                <div>
+                    <label for="select-choice-0" class="select">Select Category:</label>
+                    <select data-inline="true" name="select-choice-0" id="select-choice-0">
+                        <option>Utility</option>
+                        <option>Transportation</option>
+                        <option>Food</option>
+                        <option>Expandables</option>
+                        <option>Entertainment</option>
+                    </select>
+                    <label for="add-card-name">Or add new category:</label>
+                    <input type="text" name="add-cate-name" id="add-cate-name" value="" placeholder="New Category Name"/>
+                </div>
+
+                <div>
+                    <a href="#" data-role="button" data-inline="true" data-rel="back">Back</a>
+                    <a href="#add-confirm" data-role="button" data-inline="true" data-rel="popup">I'm ready to add</a>
+                </div><!-- /buttons -->
+
+                <div data-role="popup" id="add-confirm">
+                    <div data-role="header" data-theme="a" class="ui-corner-top">
+                        <h2>Preview</h2>
+                    </div>
+                    <div data-role="content">
+                        <p>You are about to add:</p>
+                        <P>
+                            <span class="add-preview-key">Amount:</span>
+                            <span class="add-preview-value">$23.76</span>
+                        </p>
+                        <P>
+                            <span class="add-preview-key">Date:</span>
+                            <span class="add-preview-value">10/26/2012</span>
+                        </p>
+                        <P>
+                            <span class="add-preview-key">Card/Acct.:</span>
+                            <span class="add-preview-value">Visa #1234</span>
+                        </p>
+                        <P>
+                            <span class="add-preview-key">Category:</span>
+                            <span class="add-preview-value">Groceries</span>
+                        </p>
+                        <a href="#add" data-role="button" data-inline="true" data-theme="b">Add</a>
+                        <a href="#add" data-role="button" data-inline="true" data-theme="c">Cancel</a>
+                        <p>Actually, as this is a mock, the fuctionality isn't implemented yet. So please be nice and pretend like it was! :o)</p>
+                    </div>
+                </div>
+
+                <div class="progress-bar">
+                    <label for="slider-mini">Progress: </label>
+                    <input type="range" name="slider-1" id="slider-mini" value="100" min="0" max="100" data-highlight="true" data-mini="true" class="ui-hidden-accessible" class="ui-state-persist"/>
+                </div><!-- /slider -->
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="view" data-title="View">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view" class="ui-btn-active ui-state-persist">View</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>View</h2>
+
+                <div data-role="view_btn">
+                    <a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
+                    <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>
+                </div> 
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="view-cards" data-title="View > Balance By Card/Acct">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view" class="ui-btn-active ui-state-persist">View</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>View</h2>
+                <h3>Balance by Card/Bank Account</h3>
+
+                <div data-role="fieldcontain">
+                    <label for="select-choice-1" class="select">Choose Card/Bank Account:</label>
+                    <select name="select-choice-1" id="select-choice-1" data-inline="true">
+                        <option value="visa">Visa #1234</option>
+                        <option value="amex">Amex #5678</option>
+                        <option value="citi">Citibank checking #7890</option>
+                    </select>
+                </div><!-- /fieldcontain -->
+
+                <div id="chart-balance-by-card"></div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="view-categories" data-title="View > Balance By Categories">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view" class="ui-btn-active ui-state-persist">View</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>View</h2>
+                <h3>Balance by Categories</h3>
+
+                <div data-role="fieldcontain">
+                    <label for="select-choice-1" class="select">Choose Category:</label>
+                    <select name="select-choice-1" id="select-choice-1" data-inline="true">
+                        <option>Utility</option>
+                        <option>Trasportation</option>
+                        <option>Food</option>
+                        <option>Expandables</option>
+                        <option>Entertainment</option>
+                    </select>
+                </div><!-- /fieldcontain -->
+
+                <div id="chart-balance-by-cate"></div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+
+
+
+
+
+        <div data-role="page" id="settings" data-title="Settings">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+
+                <div data-role="settings_btn">
+                    <a href="#settings-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Cards/Bank Accounts</a>
+                    <a href="#settings-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Categories</a>
+                    <a href="#settings-preferences" data-role="button" data-icon="arrow-r" data-iconpos="right">Preferences</a>
+                </div> 
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="settings-categories" data-title="Settings > Categories">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Categories</h3>
+
+                <ul>
+                    <li><a href="#settings-categories-edit">Utilities</a></li>
+                    <li><a href="#settings-categories-edit">Transportation</a></li>
+                    <li><a href="#settings-categories-edit">Food</a></li>
+                    <li><a href="#settings-categories-edit">Expandables</a></li>
+                    <li><a href="#settings-categories-edit">Entertainment</a></li>
+                </ul>
+
+                <div>
+                    <a href="#settings-categories-add" data-role="button" data-inline="true">Add New</a>
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="settings-categories-edit" data-title="Settings > Categories > Edit">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Categories > Edit</h3>
+
+                <div>
+                    <div data-role="fieldcontain">
+                        <label for="cate-name">Category Name:</label>
+                        <input type="text" name="cate-name" id="cate-name" value="Transportation"/>
+
+                        <a href="#cate-edit-confirmed" data-role="button" data-inline="true" data-rel="popup">Update</a>
+                        <div data-role="popup" id="cate-edit-confirmed">
+                            <div data-role="header" data-theme="a" class="ui-corner-top">
+                                <h2>Category Updated</h2>
+                            </div>
+                            <div data-role="content">
+                                <p>Confirmed!</p>
+                                <p>Actually, as this is a mock, the fuctionality isn't implemented yet. So please be nice and pretend like it was! :o)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+        <div data-role="page" id="settings-categories-add" data-title="Settings > Categories > Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Categories > Add New</h3>
+
+                <div>
+                    <div data-role="fieldcontain">
+                        <label for="cate-name">Category Name:</label>
+                        <input type="text" name="cate-name" id="cate-name" value="" placeholder="Category Name"/>
+
+                        <a href="#cate-add-confirmed" data-role="button" data-inline="true" data-rel="popup">Add</a>
+                        <div data-role="popup" id="cate-add-confirmed">
+                            <div data-role="header" data-theme="a" class="ui-corner-top">
+                                <h2>New category Added</h2>
+                            </div>
+                            <div data-role="content">
+                                <p>New category is added!</p>
+                                <p>Actually, as this is a mock, the fuctionality isn't implemented yet. So please be nice and pretend like it was! :o)</p>
+                            </div>
+                        </div><!-- /popup -->
+                    </div><!-- /fieldcontain -->
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+
+        <div data-role="page" id="settings-preferences" data-title="Settings > Preferences">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Preferences</h3>
+
+                <ul>
+                    <li><a href="#settings-pref-edit-currency" data-rel="popup">Currency</a></li>
+                    <li><a href="#settings-pref-edit-format" data-rel="popup">Number Format</a></li>
+                    <li><a href="#settings-pref-edit-date" data-rel="popup">Date Format</a></li>
+                    <li><a href="#settings-pref-edit-reminder" data-rel="popup">Reminder</a></li>
+                    <li><a href="#settings-pref-edit-graph" data-rel="popup">Graph orientation</a></li>
+                </ul>
+
+                <div data-role="popup" id="settings-pref-edit-currency">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="a">Select Currency</li>
+                        <li class="ui-btn-active" data-icon="false"><a href="#">US dollar</a></li>
+                        <li data-icon="false"><a href="#">Euro</a></li>
+                        <li data-icon="false"><a href="#">Canadian dollar</a></li>
+                    </ul>
+                </div>
+
+                <div data-role="popup" id="settings-pref-edit-format">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="a">Select Format</li>
+                        <li class="ui-btn-active" data-icon="false"><a href="#">Always with 2 decimals (00.00)</a></li>
+                        <li data-icon="false"><a href="#">No decimals when not applicable</a></li>
+                    </ul>
+                </div>
+
+                <div data-role="popup" id="settings-pref-edit-date">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="a">Select Date Format</li>
+                        <li class="ui-btn-active" data-icon="false"><a href="#">mm-dd-yyyy</a></li>
+                        <li data-icon="false"><a href="#">dd-mm-yyyy</a></li>
+                        <li data-icon="false"><a href="#">yyyy-mm-dd</a></li>
+                    </ul>
+                </div>
+
+                <div data-role="popup" id="settings-pref-edit-reminder">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="a">Set remindert</li>
+                        <li class="ui-btn-active" data-icon="false"><a href="#">Off</a></li>
+                        <li data-icon="false"><a href="#">On</a></li>
+                    </ul>
+                </div>
+
+                <div data-role="popup" id="settings-pref-edit-graph">
+                    <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
+                        <li data-role="divider" data-theme="a">Set Graph Orientaion</li>
+                        <li class="ui-btn-active" data-icon="false"><a href="#">Vertical</a></li>
+                        <li data-icon="false"><a href="#">Horizontal</a></li>
+                    </ul>
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+
+
+
+
+        <div data-role="page" id="settings-cards" data-title="Settings > Categories">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Cards/Bank Accounts</h3>
+
+                <ul>
+                    <li><a href="#settings-cards-edit">Visa #1234</a></li>
+                    <li><a href="#settings-cards-edit">Amex #5678</a></li>
+                </ul>
+
+                <div>
+                    <a href="#settings-cards-add" data-role="button" data-inline="true">Add New</a>
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+
+
+
+
+        <div data-role="page" id="settings-cards-edit" data-title="Settings > Cards/Accts > Edit">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Cards/Bank Accounts > Edit</h3>
+
+                <div>
+                    <div data-role="fieldcontain">
+                        <label for="card-num">Card Number:</label>
+                        <input type="text" name="card-num" id="card-num" value="1234-1234-1234-1234"/>
+                        <label for="card-name">Nick name (Optional):</label>
+                        <input type="text" name="card-name" id="card-name" value="Visa #1234"/>
+
+                        <a href="#card-edit-confirmed" data-role="button" data-inline="true" data-rel="popup">Update</a>
+                        <div data-role="popup" id="card-edit-confirmed">
+                            <div data-role="header" data-theme="a" class="ui-corner-top">
+                                <h2>Card Updated</h2>
+                            </div>
+                            <div data-role="content">
+                                <p>Confirmed!</p>
+                                <p>Actually, as this is a mock, the fuctionality isn't implemented yet. So please be nice and pretend like it was! :o)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+
+        <div data-role="page" id="settings-cards-add" data-title="Settings > Cards/Accounts > Add">
+            <div data-role="header" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#add">Add</a></li>
+                        <li><a href="#view">View</a></li>
+                        <li><a href="#setting" class="ui-btn-active ui-state-persist">Settings</a></li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <h2>Settings</h2>
+                <h3>Cards/Bank Accounts > Add New</h3>
+
+                <div>
+                    <div data-role="fieldcontain">
+                        <label for="card-num">Card Number:</label>
+                        <input type="text" name="card-num" id="card-num" value="" placeholder="Card number"/>
+                        <label for="card-name">Nick name (Optional):</label>
+                        <input type="text" name="card-name" id="card-name" value="" placeholder="Name it so it's easier to recognize"/>
+                        <!--<button type="submit" name="submit" value="submit" data-inline="true" class="right-align">Add</button>-->
+
+
+                        <a href="#card-add-confirmed" data-role="button" data-inline="true" data-rel="popup">Add</a>
+                        <div data-role="popup" id="card-add-confirmed">
+
+                            <div data-role="header" data-theme="a" class="ui-corner-top">
+                                <h2>New card Added</h2>
+                            </div>
+                            <div data-role="content">
+                                <p>New card is added!</p>
+                                <p>Actually, as this is a mock, the fuctionality isn't implemented yet. So please be nice and pretend like it was! :o)</p>
+                            </div>
+                        </div><!-- /popup -->
+
+                    </div><!-- /fieldcontain -->
+                </div>
+
+                <div>               
+                    <a href="#" data-role="button" data-inline="true" data-rel="back" class="center-align">Back</a>
+                </div>
+
+            </div><!-- /content -->
+        </div><!-- /page -->
+
+
+
+
+
+
+    </body>
+</html>
