@@ -1,7 +1,8 @@
 <?php
+    include 'Module.php';
     include 'Nav.php';
     include 'Page.php';
-
+ 
     // Navbars
     $nav_add = new Nav(0);
     $nav_view = new Nav(1);
@@ -44,6 +45,7 @@
 
     $pages['view-cards']->setHeader('View');
     $pages['view-cards']->setSubheader('Balance by Cards');
+    $pages['view-cards']-addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['view-categories']->setHeader('View');
     $pages['view-categories']->setSubheader('Balance by Categories');
