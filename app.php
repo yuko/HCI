@@ -1,10 +1,16 @@
 <?php
-    //include 'PaymentAccount.php';
+    include 'PaymentAccount.php';
     include 'Module.php';
     include 'Nav.php';
     include 'Page.php';
     include 'Button.php';
- 
+
+
+    // init cards
+    $cards = array();
+    $cards[] = new PaymentAccount('12345678', 'Visa #1234');
+
+
     // Navbars
     $nav_add = new Nav(0);
     $nav_view = new Nav(1);
@@ -26,7 +32,7 @@
     $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
 
-
+    // set up pages
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
     $pages['add']->setContent('
@@ -75,12 +81,33 @@
 </form>
 '
 );
-
+    $pages['add-date']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['add-card']->setHeader('Add');
-    $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)');
+    $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
+    $pages['add-card']->setContent('');
+/*        
+<form action="app.php#add-category" method="get" data-ajax="false">
+
+<label for="select-choice-0" class="select">Select Card/Bank acct:</label>
+<select data-inline="true" name="select-choice-0" id="select-choice-0">
+<option>Visa #1234</option>
+<option>Amex #5678</option>
+<option>Citibank #1234</option>
+</select>
+<label for="add-card-name">Or add new card:</label>
+<input type="text" name="add-card-name" id="add-card-name" value="" placeholder="New Card Name"/>
+
+<button type="submit" name="submit" value="submit" data-inline="true">Next</button>
+</form>
+ */
+ 
+    $pages['add-card']->addModule(new Button('#', 'true', 'back', 'Back'));
+ 
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
+    $pages['add-category']->addModule(new Button('#', 'true', 'back', 'Back'));
+
 
     $pages['view']->setHeader('View');
     $pages['view']->addModule(new Button('#view-cards', null, null, 'Balance by Cards/Bank Accounts', 'arrow-r', 'right'));
