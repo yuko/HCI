@@ -34,8 +34,11 @@ class Page {
         $this->nav->render();
         echo '</div><!-- /header -->';
 
+
+        echo '<div data-role="content">';
         $this->renderHeader();
         $this->renderContent();
+        echo '</div><!-- /content -->';
 
         echo '</div><!-- /page -->';
     }
@@ -46,11 +49,13 @@ class Page {
         }
     }
 
+    public function renderSubheader(){
+        if(!empty($this->subheader)) {
+            echo '<h3' .$this->subheader .'</h3>';
+        }
 
     public function renderContent() {
-        echo '<div data-role="content">';
         echo $this->content;;
-        echo '</div><!-- /content -->';
     }
 
 }
