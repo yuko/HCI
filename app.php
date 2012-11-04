@@ -30,7 +30,19 @@
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
     $pages['add']->setContent('
-<form action="forms-sample-selfsubmit.php" method="post">
+<form action="#" method="post">
+
+<div data-role="fieldcontain">
+<label for="title">Amount:</label>
+<input type="text" name="amount" id="amount" placeholder="00.00" value="" />
+</div>
+
+<button type="submit" name="submit" value="submit">Next</button>
+</form>
+'
+
+/*
+<form action="#" method="post">
 
 <div data-role="fieldcontain">
 <label for="title">Title:</label>
@@ -44,7 +56,8 @@
 
 <button type="submit" name="submit" value="submit" data-theme="b">Submit</button>
 </form>       
-        ');
+ */
+');
     //<a href="#add-date" data-role="button" data-inline="true">Next</a>
 
 
