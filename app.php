@@ -36,11 +36,28 @@
         </div>'
     );
 
+
+    $pages['view-cards']->setHeader('View');
+    $pages['view-cards']->setSubheader('Balance by Cards');
+
     $pages['view-categories']->setHeader('View');
     $pages['view-categories']->setSubheader('Balance by Categories');
     $pages['view-categories']->setContent(
         ''
     );
+
+
+    $pages['settings']->setHeader('Settings');
+    $pages['settings']->setContent(
+        '<div data-role="settings_btn">
+        <a href="#settings-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Cards/Bank Accounts</a>
+        <a href="#settings-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Categories</a>
+        <a href="#settings-preferences" data-role="button" data-icon="arrow-r" data-iconpos="right">Preferences</a>
+        </div>');
+
+
+
+
 
 
     ////////// render page
