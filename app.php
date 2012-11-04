@@ -46,7 +46,7 @@
 
     $pages['view-cards']->setHeader('View');
     $pages['view-cards']->setSubheader('Balance by Cards');
-    $pages['view-cards']-addModule(new Button('#', 'true', 'back', 'Back'));
+    $pages['view-cards']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['view-categories']->setHeader('View');
     $pages['view-categories']->setSubheader('Balance by Categories');
