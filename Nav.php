@@ -27,7 +27,7 @@ class Nav {
         if($this->activeTab == Nav::VIEW) $base .= $selected;
         $base .= '>View</a></li>'; 
 
-        $base = '<li><a href="#settings"';        
+        $base .= '<li><a href="#settings"';        
         if($this->activeTab == Nav::SETTINGS) $base .= $selected;
         $base .= '>Settings</a></li>
                 </ul>
