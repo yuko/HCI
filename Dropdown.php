@@ -18,7 +18,7 @@ class Dropdown extends Module {
     }
 
     public function render() {
-        echp '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
+        echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
         echo '<select';
        
         if($this->inline)
