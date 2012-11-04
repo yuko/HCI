@@ -2,11 +2,10 @@
 
 class Nav {
 
-   function __construct() {
-        //print "woot";
-   }
+    function __construct() {
+    }
 
-    protected render() {
+    protected function ender() {
         echo 'render';
     }
 
