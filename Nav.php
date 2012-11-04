@@ -2,12 +2,33 @@
 
 class Nav {
 
-    function __construct() {
+    private $activeTab;
+    const ADD = 0;
+    const VIEW = 1;
+    const SETTINGS = 2;
+
+    function __construct($active = 'null') {
+
     }
 
+
+
     public function render() {
-        echo 'render';
-    }
+        echo 'render ';
+        echo $this::ADD;
+
+
+$base = '
+<div data-role="navbar">
+<ul>
+<li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
+<li><a href="#view">View</a></li>                                                 
+<li><a href="#settings">Settings</a></li>
+</ul>
+</div><!-- /navbar -->';
+
+
+}
 
 } // end of class
 
