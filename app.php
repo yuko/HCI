@@ -37,17 +37,15 @@
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
 
     $pages['view']->setHeader('View');
+    $pages['view']->addModule(new Button('#view-cards', null, null, 'Balance by Cards/Bank Accounts', 'arrow-r', 'right'));
+    $pages['view']->addModule(new Button('#view-categories', null, null, 'Balance by Categories', 'arrow-r', 'right'));
+    /*
     $pages['view']->setContent(
-        /*
-        '<div data-role="view_btn">
-        <a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
-        <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>
-        </div>'
-         */
         '<a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
         <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>'
     );
-
+    */
+    
 
     $pages['view-cards']->setHeader('View');
     $pages['view-cards']->setSubheader('Balance by Cards');
