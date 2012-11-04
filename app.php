@@ -28,8 +28,16 @@
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings); 
 
 
+
+    $pages['view']->setHeader('View');
+    $pages['view']->setContent(
+        ''
+    );
+
+    $pages['view-categories']->setHeader('View');
+    $pages['view-categories']->setSubheader('Balance by Categories');
     $pages['view-categories']->setContent(
-        '<h2>View</h2><h3>Balance by Categories</h3>'
+        ''
     );
 
     ////////// render page
