@@ -7,9 +7,19 @@
     $nav_view = new Nav(1);
     $nav_settings = new Nav(2);
 
-
+    $array[];
+    $array[] = 1;
+    $array[] = 2;
+    $array[] = 3;
+    $array[] = 4;
+    print_r($array);
 
     $page_add = new Page('add', 'Add', $nav_add); 
+    $page_add-date = new Page('add-date', 'Add date', $nav_add); 
+    $page_add-card = new Page('add-card', 'Add card', $nav_add); 
+    $page_add-category = new Page('add-category', 'Add category', $nav_add); 
+ 
+ 
     $page_view = new Page('view', 'View', $nav_view); 
     $page_settings = new Page('settings', 'Settings', $nav_settings); 
 
