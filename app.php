@@ -17,9 +17,10 @@
     $pages['view-categories'] = new Page('view-categories', 'View categories', $nav_view); 
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings);
     $pages['settings-cards'] = new Page('settings-cards', 'Settings > Cards', $nav_settings); 
+    $pages['settings-cards-add'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
     $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
+    $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
-
 
 
     $pages['add']->setHeader('Add');
@@ -62,11 +63,18 @@
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
 
+    $pages['settings-cards-add']->setHeader('Settings');
+    $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
+
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
 
+    $pages['settings-categories']->setHeader('Settings');
+    $pages['settings-categories-add']->setSubheader('Categories > Add');
+
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
+
 
 
 
