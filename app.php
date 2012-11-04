@@ -28,6 +28,10 @@
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings); 
 
 
+    $pages['view-categories']->setContent(
+        '<h2>View</h2><h3>Balance by Categories</h3>'
+    );
+
     ////////// render page
     echo '<html>';
     printHeader();
