@@ -4,12 +4,12 @@
 // data-role="button"
 class Button extends Module {
 
-    private $href;
-    private $inline;
-    private $rel;
-    private $text;
-    private $icon;
-    private $iconPosition;
+    protected $href;
+    protected $inline;
+    protected $rel;
+    protected $text;
+    protected $icon;
+    protected $iconPosition;
 
     function __construct($h, $in, $r, $t, $i = null, $ip = null) {
         parent::__construct();
