@@ -7,15 +7,6 @@
     $nav_view = new Nav(1);
     $nav_settings = new Nav(2);
 
-    /*
-    $page_add = new Page('add', 'Add', $nav_add); 
-    $page_add_date = new Page('add-date', 'Add date', $nav_add); 
-    $page_add_card = new Page('add-card', 'Add card', $nav_add); 
-    $page_add_category = new Page('add-category', 'Add category', $nav_add); 
- 
-    $page_view = new Page('view', 'View', $nav_view); 
-    $page_settings = new Page('settings', 'Settings', $nav_settings); 
-     */
     $pages = array();
     $pages['add'] = new Page('add', 'Add', $nav_add); 
     $pages['add-date'] = new Page('add-date', 'Add date', $nav_add); 
@@ -24,10 +15,7 @@
     $pages['view'] = new Page('view', 'View', $nav_view); 
     $pages['view-cards'] = new Page('view-cards', 'View cards', $nav_view); 
     $pages['view-categories'] = new Page('view-categories', 'View categories', $nav_view); 
-
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings); 
-
-
 
     $pages['view']->setHeader('View');
     $pages['view']->setContent(
@@ -45,29 +33,12 @@
     printHeader();
     echo '<body>';
 
-    /*
-    $page_add->render();
-    $page_view->render();
-    $page_settings->render();
-     */
     foreach ($pages as $key => $value) {
         $value->render();
     }
 
-
     echo '</body>';
     echo '</html>';
-
-    /*
-    $nav = new Nav();
-    $nav->render();
-
-    echo '-----<br>';
-    $nav2 = new Nav(2);
-    $nav2->render();
-    */
-
-
 
     function printHeader() {
         echo '<head>';

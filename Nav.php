@@ -1,7 +1,6 @@
 <?php
 
 class Nav {
-
     private $activeTab;
     const ADD = 0;
     const VIEW = 1;
@@ -12,11 +11,8 @@ class Nav {
     }
 
     public function render() {
-        //echo 'render() ';
-        //echo 'activeTab=' .$this->activeTab; // works
-        //echo Nav::ADD; //works
-
         $selected = ' class="ui-btn-active ui-state-persist"';
+
         $base = '<div data-role="navbar">
                     <ul>
                     <li><a href="#add"';
@@ -35,6 +31,5 @@ class Nav {
 
         echo $base;
     }
-
 }
 ?>
