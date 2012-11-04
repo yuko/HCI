@@ -1,5 +1,4 @@
 <?php
-    include 'Module.php';
     include 'Nav.php';
     include 'Page.php';
  
