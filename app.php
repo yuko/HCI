@@ -17,9 +17,23 @@
     $pages['view-categories'] = new Page('view-categories', 'View categories', $nav_view); 
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings); 
 
+
+    $pages['add']->setHeader('Add');
+    $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
+
+    $pages['add-date']->setHeader('Add');
+    $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
+    $pages['add-card']->setHeader('Add');
+    $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)');
+    $pages['add-category']->setHeader('Add');
+    $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
+
     $pages['view']->setHeader('View');
     $pages['view']->setContent(
-        ''
+        '<div data-role="view_btn">
+        <a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
+        <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>
+        </div>'
     );
 
     $pages['view-categories']->setHeader('View');
