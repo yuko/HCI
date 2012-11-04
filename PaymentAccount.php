@@ -9,6 +9,10 @@ class PaymentAccount {
         $this->nickname = $n;
     }
 
+    public function getId() {
+        return $this->id;
+    }
+
     public function getNickname() {
         return $this->nickname;
     }

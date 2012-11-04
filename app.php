@@ -4,12 +4,13 @@
     include 'Nav.php';
     include 'Page.php';
     include 'Button.php';
-
+    include 'Dropdown.php';
 
     // init cards
     $cards = array();
     $cards[] = new PaymentAccount('12345678', 'Visa #1234');
-
+    $cards[] = new PaymentAccount('23456789', 'Amex #2345');
+    $cards[] = new PaymentAccount('34567890', 'Citibank #3456');
 
     // Navbars
     $nav_add = new Nav(0);
