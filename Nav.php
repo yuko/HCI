@@ -7,15 +7,16 @@ class Nav {
     const VIEW = 1;
     const SETTINGS = 2;
 
-    function __construct($active = $this::ADD) {
-
+    function __construct($active = 0) {
+        $activeTab = $active;
     }
 
 
 
     public function render() {
-        echo 'render ';
-        echo $this::ADD;
+        echo 'render() ';
+        echo 'activeTab=' .$activeTab;
+        //echo $this::ADD;
 
 
 $base = '
