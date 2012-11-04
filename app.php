@@ -30,7 +30,7 @@
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
     $pages['add']->setContent('
-<form action="app.php#add-date" method="post">
+<form action="app.php#add-date" method="get" data-ajax="false">
 
 <div data-role="fieldcontain">
 <label for="title">Amount:</label>
