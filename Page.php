@@ -5,11 +5,16 @@ class Page {
     private $id;
     private $title; // data-title
     private $nav;
+    private $content;
 
     function __construct($i, $t, $n) {
         $this->id = $i;
         $this->title = $t;
         $this->nav = $n;
+    }
+
+    public function setContent($c) {
+        $this->content = $c;
     }
 
     public function render() {
@@ -25,7 +30,7 @@ class Page {
 
     public function renderContent() {
         echo '<div data-role="content">';
-        echo 'content';
+        echo $this->content;;
         echo '</div><!-- /content -->';
     }
 

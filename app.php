@@ -22,6 +22,9 @@
     $pages['add-card'] = new Page('add-card', 'Add card', $nav_add); 
     $pages['add-category'] = new Page('add-category', 'Add category', $nav_add); 
     $pages['view'] = new Page('view', 'View', $nav_view); 
+    $pages['view-cards'] = new Page('view-cards', 'View cards', $nav_view); 
+    $pages['view-categories'] = new Page('view-categories', 'View categories', $nav_view); 
+
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings); 
 
 
