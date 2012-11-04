@@ -8,7 +8,7 @@ class Nav {
     const SETTINGS = 2;
 
     function __construct($active = 0) {
-        $activeTab = $active;
+        $this->activeTab = $active;
     }
 
 
