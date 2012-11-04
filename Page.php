@@ -36,8 +36,8 @@ class Page {
 
 
         echo '<div data-role="content">';
-        $this->renderHeader();
-        $this->renderSubheader();
+        //$this->renderHeader();
+        //$this->renderSubheader();
         $this->renderContent();
         echo '</div><!-- /content -->';
 
