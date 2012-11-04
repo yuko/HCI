@@ -52,11 +52,11 @@ class Page {
 
     public function renderSubheader(){
         if(!empty($this->subheader)) {
-            echo '<h3' .$this->subheader .'</h3>';
+            echo '<h3>' .$this->subheader .'</h3>';
         }
 
     public function renderContent() {
-        echo $this->content;;
+        echo $this->content;
     }
 
 }
