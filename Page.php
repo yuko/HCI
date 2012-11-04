@@ -1,6 +1,6 @@
 <?php
 
-class Nav {
+class Page {
 
     private $id;
     private $title; // data-title
