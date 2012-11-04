@@ -15,9 +15,9 @@
     print_r($array);
 
     $page_add = new Page('add', 'Add', $nav_add); 
-    $page_add-date = new Page('add-date', 'Add date', $nav_add); 
-    $page_add-card = new Page('add-card', 'Add card', $nav_add); 
-    $page_add-category = new Page('add-category', 'Add category', $nav_add); 
+    $page_add_date = new Page('add-date', 'Add date', $nav_add); 
+    $page_add_card = new Page('add-card', 'Add card', $nav_add); 
+    $page_add_category = new Page('add-category', 'Add category', $nav_add); 
  
  
     $page_view = new Page('view', 'View', $nav_view); 
