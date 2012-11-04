@@ -1,8 +1,8 @@
 <?php
 
 class PaymentAccount {
-    protected id;
-    protected nickname;
+    protected $id;
+    protected $nickname;
 
     function __construct($i = null, $n = null) {
         $this->id = $i;
