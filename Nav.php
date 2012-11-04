@@ -15,7 +15,7 @@ class Nav {
 
     public function render() {
         echo 'render() ';
-        echo 'activeTab=' .$activeTab;
+        echo 'activeTab=' .$this->activeTab;
         //echo $this::ADD;
 
 
