@@ -7,14 +7,13 @@ class Page {
     private $nav;
     private $header;
     private $subheader;
-    private $content;
+    private $content; // todo - remove after modularizing eveyrthing
     private $modules = array();
 
     function __construct($i, $t, $n) {
         $this->id = $i;
         $this->title = $t;
         $this->nav = $n;
-
     }
 
     public function setContent($c) {
@@ -38,7 +37,6 @@ class Page {
         echo '<div data-role="header" data-position="fixed">';
         $this->nav->render();
         echo '</div><!-- /header -->';
-
 
         echo '<div data-role="content">';
         $this->renderHeader();

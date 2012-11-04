@@ -1,4 +1,5 @@
 <?php
+    include 'PaymentAccount.php';
     include 'Module.php';
     include 'Nav.php';
     include 'Page.php';
@@ -28,6 +29,24 @@
 
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
+    $pages['add']->setContent('
+<form action="forms-sample-selfsubmit.php" method="post">
+
+<div data-role="fieldcontain">
+<label for="title">Title:</label>
+<input type="text" name="title" id="title" placeholder="diashow title"value="" />
+</div>
+
+<div data-role="fieldcontain">
+<label for="timeout">Timeout:</label>
+<input type="range" name="timeout" id="timeout" value="0" min="0" max="150" step="10" data-highlight="true"  />
+</div>
+
+<button type="submit" name="submit" value="submit" data-theme="b">Submit</button>
+</form>       
+        ');
+    //<a href="#add-date" data-role="button" data-inline="true">Next</a>
+
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
