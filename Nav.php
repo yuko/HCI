@@ -12,7 +12,7 @@ class Nav {
     }
 
     public function render() {
-        echo 'render() ';
+        //echo 'render() ';
         //echo 'activeTab=' .$this->activeTab; // works
         //echo Nav::ADD; //works
 
@@ -33,8 +33,7 @@ class Nav {
                 </ul>
                 </div><!-- /navbar -->';
 
-
-        //echo $base;
+        echo $base;
     }
 
 }
