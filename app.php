@@ -39,13 +39,6 @@
     $pages['view']->setHeader('View');
     $pages['view']->addModule(new Button('#view-cards', null, null, 'Balance by Cards/Bank Accounts', 'arrow-r', 'right'));
     $pages['view']->addModule(new Button('#view-categories', null, null, 'Balance by Categories', 'arrow-r', 'right'));
-    /*
-    $pages['view']->setContent(
-        '<a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
-        <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>'
-    );
-    */
-    
 
     $pages['view-cards']->setHeader('View');
     $pages['view-cards']->setSubheader('Balance by Cards');
@@ -56,16 +49,22 @@
     $pages['view-categories']->addModule(new Button('#', 'true', 'back', 'Back'));
 
 
-    $pages['settings']->setHeader('Settings');
+    $pages['settings']->setHeader('Settings'); 
+    $pages['settings']->addModule(new Button('#settings-cards', null, null, 'Cards/Bank Accounts', 'arrow-r', 'right'));
+    $pages['settings']->addModule(new Button('#settings-categories', null, null, 'Categories', 'arrow-r', 'right'));
+    $pages['settings']->addModule(new Button('#settings-preferences', null, null, 'Preferences', 'arrow-r', 'right'));
+    /*
     $pages['settings']->setContent(
         '<div data-role="settings_btn">
         <a href="#settings-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Cards/Bank Accounts</a>
         <a href="#settings-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Categories</a>
         <a href="#settings-preferences" data-role="button" data-icon="arrow-r" data-iconpos="right">Preferences</a>
         </div>');
+    */
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
+    $pages['settings-cards']->addModule(new Button('#settings-cards-add', 'true', null, 'Add New'));
     $pages['settings-cards']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['settings-cards-add']->setHeader('Settings');
@@ -74,6 +73,7 @@
 
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
+    $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
     $pages['settings-categories']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['settings-categories-add']->setHeader('Settings');
