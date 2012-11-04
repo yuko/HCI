@@ -11,26 +11,31 @@ class Nav {
         $this->activeTab = $active;
     }
 
-
-
     public function render() {
         echo 'render() ';
-        echo 'activeTab=' .$this->activeTab;
-        echo Nav::ADD;
+        //echo 'activeTab=' .$this->activeTab; // works
+        //echo Nav::ADD; //works
+
+        $selected = ' class="ui-btn-active ui-state-persist"';
+        $base = '<div data-role="navbar">
+                    <ul>
+                    <li><a href="#add"';
+        if($this->activeTab == Nav::ADD) $base .= $selected;
+        $base .= '>Add</a></li>';
+
+        $base .= '<li><a href="#view"';
+        if($this->activeTab == Nav::VIEW) $base .= $selected;
+        $base .= '>View</a></li>'; 
+
+        $base = '<li><a href="#settings"';        
+        if($this->activeTab == Nav::SETTINGS) $base .= $selected;
+        $base .= '>Settings</a></li>
+                </ul>
+                </div><!-- /navbar -->';
 
 
-$base = '
-<div data-role="navbar">
-<ul>
-<li><a href="#add" class="ui-btn-active ui-state-persist">Add</a></li>
-<li><a href="#view">View</a></li>                                                 
-<li><a href="#settings">Settings</a></li>
-</ul>
-</div><!-- /navbar -->';
-
+        //echo $base;
+    }
 
 }
-
-} // end of class
-
 ?>
