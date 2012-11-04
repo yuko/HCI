@@ -5,9 +5,10 @@ class Page {
     private $id;
     private $title; // data-title
     private $nav;
-    private $content;
     private $header;
     private $subheader;
+    private $content;
+    private $modules = array();
 
     function __construct($i, $t, $n) {
         $this->id = $i;
@@ -26,6 +27,10 @@ class Page {
 
     public function setSubheader($s) {
         $this->subheader = $s;
+    }
+
+    public function addModule($m) {
+        $this->modules[] = $m;
     }
 
     public function render() {
@@ -58,6 +63,12 @@ class Page {
 
     public function renderContent() {
         echo $this->content;
+
+        if(!empty($this->modules)) {
+            foreach($this->modules as $key => $value) {
+                $value->render();
+            }
+        }
     }
 
 }

@@ -1,6 +1,7 @@
 <?php
+include 'Module.php';
 
-class Nav {
+class Nav extends Module {
     private $activeTab;
     const ADD = 0;
     const VIEW = 1;
