@@ -7,7 +7,7 @@
     $nav_view = new Nav(1);
     $nav_settings = new Nav(2);
 
-    $array[];
+    $array = array();
     $array[] = 1;
     $array[] = 2;
     $array[] = 3;
