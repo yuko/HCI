@@ -7,7 +7,7 @@ class Nav {
     const VIEW = 1;
     const SETTINGS = 2;
 
-    function __construct($active = 'null') {
+    function __construct($active = $this::ADD) {
 
     }
 
