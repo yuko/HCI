@@ -40,6 +40,8 @@
 <button type="submit" name="submit" value="submit">Next</button>
 </form>
 '
+);
+
 
 /*
 <form action="#" method="post">
@@ -57,8 +59,7 @@
 <button type="submit" name="submit" value="submit" data-theme="b">Submit</button>
 </form>       
  */
-');
-    //<a href="#add-date" data-role="button" data-inline="true">Next</a>
+//<a href="#add-date" data-role="button" data-inline="true">Next</a>
 
 
     $pages['add-date']->setHeader('Add');
