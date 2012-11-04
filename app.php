@@ -1,7 +1,8 @@
 <?php
     include 'Nav.php';
 
-    echo 'hello world'; 
+    echo '=====<br>';
+    echo 'hello world<br>'; 
     
     $nav = new Nav();
     $nav->render();

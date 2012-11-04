@@ -5,7 +5,7 @@ class Nav {
     function __construct() {
     }
 
-    protected function render() {
+    public function render() {
         echo 'render';
     }
 
