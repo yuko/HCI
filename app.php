@@ -38,10 +38,14 @@
 
     $pages['view']->setHeader('View');
     $pages['view']->setContent(
+        /*
         '<div data-role="view_btn">
         <a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
         <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>
         </div>'
+         */
+        '<a href="#view-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Cards/Bank Accounts</a>
+        <a href="#view-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Balance by Categories</a>'
     );
 
 
