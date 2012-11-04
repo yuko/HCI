@@ -1,6 +1,7 @@
 <?php
     include 'Nav.php';
     include 'Page.php';
+    include 'Button.php';
  
     // Navbars
     $nav_add = new Nav(0);
