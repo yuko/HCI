@@ -28,6 +28,7 @@
         ''
     );
 
+
     ////////// render page
     echo '<html>';
     printHeader();
