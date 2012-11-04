@@ -9,15 +9,19 @@
 
 
 
-    // Add 
     $page_add = new Page('add', 'Add', $nav_add); 
+    $page_view = new Page('view', 'View', $nav_edit); 
+    $page_settings = new Page('settings', 'Settings', $nav_settings); 
 
 
+    ////////// render page
     echo '<html>';
     printHeader();
     echo '<body>';
 
     $page_add->render();
+    $page_edit->render();
+    $page_settings->render();
 
     echo '</body>';
     echo '</html>';
