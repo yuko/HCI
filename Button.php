@@ -1,5 +1,5 @@
 <?php
-include 'Module.php';
+//include 'Module.php';
 
 // data-role="button"
 class Button extends Module {
@@ -10,6 +10,7 @@ class Button extends Module {
     private $text;
 
     function __construct($h, $i, $r, $t) {
+        parent::__construct();
         $this->href = $h;
         $this->inline = $i;
         $this->rel = $r;

@@ -1,5 +1,5 @@
 <?php
-include 'Module.php';
+//include 'Module.php';
 
 class Nav extends Module {
     private $activeTab;
@@ -8,6 +8,7 @@ class Nav extends Module {
     const SETTINGS = 2;
 
     function __construct($active = 0) {
+        parent::__construct();
         $this->activeTab = $active;
     }
 
