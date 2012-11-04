@@ -102,7 +102,9 @@
 <button type="submit" name="submit" value="submit" data-inline="true">Next</button>
 </form>
  */
- 
+
+
+    print_r($cards);
     $pages['add-card']->addModule(new Dropdown(0, true, 'add-card', 'Select Card/Bank Acct', $cards));
     $pages['add-card']->addModule(new Button('#', 'true', 'back', 'Back'));
  
