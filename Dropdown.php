@@ -27,7 +27,7 @@ class Dropdown extends Module {
         echo 'name="' .$this->selectId .'" id="' .$this->selectId .'">';
 
         echo '<option value="none">-- Select --</option>';
-        for($i = 0; $i < sizeOf($this->options; $i++) {
+        for($i = 0; $i < sizeOf($this->options); $i++) {
             echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getnNickname() .'</option>';
         }
         echo '</select>';
