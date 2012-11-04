@@ -15,7 +15,11 @@
     $pages['view'] = new Page('view', 'View', $nav_view); 
     $pages['view-cards'] = new Page('view-cards', 'View cards', $nav_view); 
     $pages['view-categories'] = new Page('view-categories', 'View categories', $nav_view); 
-    $pages['settings'] = new Page('settings', 'Settings', $nav_settings); 
+    $pages['settings'] = new Page('settings', 'Settings', $nav_settings);
+    $pages['settings-cards'] = new Page('settings-cards', 'Settings > Cards', $nav_settings); 
+    $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
+    $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
+
 
 
     $pages['add']->setHeader('Add');
@@ -55,8 +59,14 @@
         <a href="#settings-preferences" data-role="button" data-icon="arrow-r" data-iconpos="right">Preferences</a>
         </div>');
 
+    $pages['settings-cards']->setHeader('Settings');
+    $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
 
+    $pages['settings-categories']->setHeader('Settings');
+    $pages['settings-categories']->setSubheader('Categories');
 
+    $pages['settings-preferences']->setHeader('Settings');
+    $pages['settings-preferences']->setSubheader('Preferences');
 
 
 
