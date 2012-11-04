@@ -36,8 +36,8 @@ class Page {
 
 
         echo '<div data-role="content">';
-        //$this->renderHeader();
-        //$this->renderSubheader();
+        $this->renderHeader();
+        $this->renderSubheader();
         $this->renderContent();
         echo '</div><!-- /content -->';
 
@@ -54,6 +54,7 @@ class Page {
         if(!empty($this->subheader)) {
             echo '<h3>' .$this->subheader .'</h3>';
         }
+    }
 
     public function renderContent() {
         echo $this->content;
