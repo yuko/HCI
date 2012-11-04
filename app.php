@@ -9,6 +9,7 @@
     $nav_view = new Nav(1);
     $nav_settings = new Nav(2);
 
+    // init pages
     $pages = array();
     $pages['add'] = new Page('add', 'Add', $nav_add); 
     $pages['add-date'] = new Page('add-date', 'Add date', $nav_add); 
@@ -50,9 +51,7 @@
 
     $pages['view-categories']->setHeader('View');
     $pages['view-categories']->setSubheader('Balance by Categories');
-    $pages['view-categories']->setContent(
-        ''
-    );
+    $pages['view-categories']->addModule(new Button('#', 'true', 'back', 'Back'));
 
 
     $pages['settings']->setHeader('Settings');
@@ -65,19 +64,23 @@
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
+    $pages['settings-cards']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
+    $pages['settings-cards-add']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
+    $pages['settings-categories']->addModule(new Button('#', 'true', 'back', 'Back'));
 
-    $pages['settings-categories']->setHeader('Settings');
+    $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
+    $pages['settings-categories-add']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
-
+    $pages['settings-preferences']->addModule(new Button('#', 'true', 'back', 'Back'));
 
 
 
