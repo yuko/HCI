@@ -33,7 +33,6 @@
 <form action="app.php#add-date" method="get" data-ajax="false">
 
 <div data-role="fieldcontain">
-<label for="title">Amount:</label>
 <input type="text" name="amount" id="amount" placeholder="00.00" value="" />
 </div>
 
@@ -64,6 +63,20 @@
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
+    $pages['add-date']->setContent('
+<form action="app.php#add-card" method="get" data-ajax="false">
+
+<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">
+<label for="date" class="ui-input-text">Date:</label>
+<input type="date" name="date" id="date" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"/>
+</div>
+
+<button type="submit" name="submit" value="submit" data-inline="true">Next</button>
+</form>
+'
+);
+
+
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)');
     $pages['add-category']->setHeader('Add');
