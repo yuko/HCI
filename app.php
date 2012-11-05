@@ -73,8 +73,7 @@
                     'inputType' => 'text',
                     'placeHolder' => '00.00',
                 )
-        
-        );
+            ));
 
 
 /*
