@@ -63,7 +63,7 @@
 '
 );
     */
-    $pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next'));
+    $pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next', '00.00', null));
 
 
 
