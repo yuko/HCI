@@ -5,6 +5,7 @@
     include 'Page.php';
     include 'Button.php';
     include 'Form.php';
+    include 'FormInput.php';
     include 'Dropdown.php';
 
     // init cards
@@ -53,7 +54,7 @@
 '
 );
     */
-    $pages['add']->addModule(new Form('app.php#add-date', 'add-amount', null, 'text', 'Next'));
+    $pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next'));
 
 
 
@@ -92,8 +93,7 @@
 '
 );
 ****************/
-    $pages['add-date']->addModule(new Form('app.php#add-card', 'add-date', null, 'date', 'Next'));
-    //$pages['add-date']->addModule(new Button('#', 'true', 'back', 'Back'));
+    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
     $pages['add-date']->addModule($button_back);
 
     $pages['add-card']->setHeader('Add');
@@ -116,7 +116,6 @@
  */
 
     $pages['add-card']->addModule(new Dropdown(0, true, 'add-card', 'Select Card/Bank Acct', $cards));
-    //$pages['add-card']->addModule(new Button('#', 'true', 'back', 'Back')); 
     $pages['add-card']->addModule($button_back);
     
     $pages['add-category']->setHeader('Add');
@@ -130,13 +129,11 @@
 
     $pages['view-cards']->setHeader('View');
     $pages['view-cards']->setSubheader('Balance by Cards');
-    //$pages['view-cards']->addModule(new Button('#', 'true', 'back', 'Back'));
     $pages['view-cards']->addModule($button_back);
 
 
     $pages['view-categories']->setHeader('View');
     $pages['view-categories']->setSubheader('Balance by Categories');
-    //$pages['view-categories']->addModule(new Button('#', 'true', 'back', 'Back'));
     $pages['view-categories']->addModule($button_back);
 
 
@@ -161,25 +158,21 @@
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
-    //$pages['settings-cards-add']->addModule(new Button('#', 'true', 'back', 'Back'));
     $pages['settings-cards-add']->addModule($button_back);
 
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
     $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
-    //$pages['settings-categories']->addModule(new Button('#', 'true', 'back', 'Back'));
     $pages['settings-categories']->addModule($button_back);
 
 
     $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
-    //$pages['settings-categories-add']->addModule(new Button('#', 'true', 'back', 'Back'));
     $pages['settings-categories-add']->addModule($button_back);
 
 
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
-    //$pages['settings-preferences']->addModule(new Button('#', 'true', 'back', 'Back'));
     $pages['settings-preferences']->addModule($button_back);
 
 
