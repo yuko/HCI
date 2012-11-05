@@ -1,6 +1,6 @@
 <?php
 
-class Dropdown extends Module {
+class Dropdown extends Form {
 
     protected $selectedIndex;
     protected $inline;
@@ -8,8 +8,8 @@ class Dropdown extends Module {
     protected $labelText;
     protected $options = array();
 
-    function __construct($s = 0, $i=true, $si = null, $lt, $o) {
-        parent::__construct();
+    function __construct($a, $bt, $s = 0, $i=true, $si = null, $lt, $o) {
+        parent::__construct($a, $bt);
         $this->selectedIndex = $s;
         $this->inline = $i;
         $this->selectId;
@@ -17,18 +17,12 @@ class Dropdown extends Module {
         $this->options = $o;
     }
 
-    public function render() {
+    public function renderLabel() {
+        if(!empty($this->labelText))
+            echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
+    }
 
-
-        echo '<form action="app.php#add-category" method="get" data-ajax="false">';
-        echo '<div data-role="fieldcontain">';
-
-
-
-
-    
-
-        echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
+    public function renderFormElements() {
         echo '<select';
        
         if($this->inline)
@@ -38,27 +32,12 @@ class Dropdown extends Module {
 
         echo '<option value="none">-- Select --</option>';
         for($i = 0; $i < sizeOf($this->options); $i++) {
-            // todo - hardcoded for nickname. change
-            echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getNickname() .'</option>';
+            echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getName() .'</option>';
         }
         echo '</select>';
 
+        //todo - add text field
 
-
-
-        echo '</div><!-- /fieldcontain -->';
-        echo '<button type="submit" name="submit" value="submit" data-inline="true">Next</button>';
-        echo '</form>';
-
-
-        /*
-        <label for="select-choice-0" class="select">Select Card/Bank acct:</label>
-            <select data-inline="true" name="select-choice-0" id="select-choice-0">
-            <option>Visa #1234</option>
-            <option>Amex #5678</option>
-            <option>Citibank #1234</option>
-            </select>
-        */
     }
 
 }

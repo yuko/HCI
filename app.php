@@ -14,6 +14,7 @@
     $cards[] = new PaymentAccount('12345678', 'Visa #1234');
     $cards[] = new PaymentAccount('23456789', 'Amex #2345');
     $cards[] = new PaymentAccount('34567890', 'Citibank #3456');
+    $cards[] = new PaymentAccount('00000000', 'Cash');
 
     // init categories
     $categories = array();
@@ -22,6 +23,7 @@
     $categories[] = new Category(2, 'Groceries');
     $categories[] = new Category(3, 'Entertainment');
     $categories[] = new Category(4, 'Eating out');
+    $categories[] = new Category(5, 'Miscellaneous');
 
     // "Back" button
     $button_back = new Button('#', 'true', 'back', 'Back');

@@ -36,7 +36,13 @@ class Dropdown extends Form {
         }
         echo '</select>';
 
+
+
+
         //todo - add text field
+
+        //echo '<input type="' .$this->inputType .'" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="' .$this->placeHolder .'" />';
+        echo '<input type="text" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="placeholder" />';
 
     }
 
