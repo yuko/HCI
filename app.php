@@ -85,7 +85,7 @@
 '
 );
 ****************/
-    $pages['add-date']->addModule(new Form('app.php#add-card', 'add-date', 'Date:', 'date', 'Next'));
+    $pages['add-date']->addModule(new Form('app.php#add-card', 'add-date', null, 'date', 'Next'));
     $pages['add-date']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['add-card']->setHeader('Add');

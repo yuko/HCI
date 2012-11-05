@@ -18,6 +18,16 @@ class Dropdown extends Module {
     }
 
     public function render() {
+
+
+        echo '<form action="app.php#add-category" method="get" data-ajax="false">';
+        echo '<div data-role="fieldcontain">';
+
+
+
+
+    
+
         echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
         echo '<select';
        
@@ -32,6 +42,14 @@ class Dropdown extends Module {
             echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getNickname() .'</option>';
         }
         echo '</select>';
+
+
+
+
+        echo '</div><!-- /fieldcontain -->';
+        echo '<button type="submit" name="submit" value="submit" data-inline="true">Next</button>';
+        echo '</form>';
+
 
         /*
         <label for="select-choice-0" class="select">Select Card/Bank acct:</label>
