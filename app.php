@@ -65,8 +65,16 @@
 '
 );
     */
-    $pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next', '00.00', null));
-
+    //$pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next', '00.00', null));
+    $pages['add']->addModule(new FormInput('app.php#add-date', 'Next',
+                array(
+                    'selectId' => 'add-amount', 
+                    'labelText' => null, 
+                    'inputType' => 'text',
+                    'placeHolder' => '00.00',
+                )
+        
+        );
 
 
 /*
