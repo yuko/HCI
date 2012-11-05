@@ -115,7 +115,8 @@
 </form>
  */
 
-    $pages['add-card']->addModule(new Dropdown(0, true, 'add-card', 'Select Card/Bank Acct', $cards));
+    //$pages['add-card']->addModule(new Dropdown(0, true, 'add-card', null, $cards));
+    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
     $pages['add-card']->addModule($button_back);
     
     $pages['add-category']->setHeader('Add');

@@ -1,6 +1,6 @@
 <?php
 
-class Dropdown extends Form {
+class Dropdown extends Module {
 
     protected $selectedIndex;
     protected $inline;
@@ -8,8 +8,8 @@ class Dropdown extends Form {
     protected $labelText;
     protected $options = array();
 
-    function __construct($a, $bt, $s = 0, $i=true, $si = null, $lt, $o) {
-        parent::__construct($a, $bt);
+    function __construct($s = 0, $i=true, $si = null, $lt, $o) {
+        parent::__construct();
         $this->selectedIndex = $s;
         $this->inline = $i;
         $this->selectId;
@@ -17,29 +17,6 @@ class Dropdown extends Form {
         $this->options = $o;
     }
 
-    public function renderLabel() {
-        echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
-    }
-
-    public function renderFormElements() {
-        echo '<select';
-       
-        if($this->inline)
-            echo ' data-inline="true" ';
-       
-        echo 'name="' .$this->selectId .'" id="' .$this->selectId .'">';
-
-        echo '<option value="none">-- Select --</option>';
-        for($i = 0; $i < sizeOf($this->options); $i++) {
-            // todo - hardcoded for nickname. change
-            echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getNickname() .'</option>';
-        }
-        echo '</select>';
-
-
-    }
-
-    /*
     public function render() {
 
 
@@ -72,7 +49,17 @@ class Dropdown extends Form {
         echo '</div><!-- /fieldcontain -->';
         echo '<button type="submit" name="submit" value="submit" data-inline="true">Next</button>';
         echo '</form>';
+
+
+        /*
+        <label for="select-choice-0" class="select">Select Card/Bank acct:</label>
+            <select data-inline="true" name="select-choice-0" id="select-choice-0">
+            <option>Visa #1234</option>
+            <option>Amex #5678</option>
+            <option>Citibank #1234</option>
+            </select>
+        */
     }
-    */
+
 }
 ?>
