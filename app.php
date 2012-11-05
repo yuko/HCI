@@ -1,5 +1,6 @@
 <?php
     include 'PaymentAccount.php';
+    include 'Category.php';
     include 'Module.php';
     include 'Nav.php';
     include 'Page.php';
