@@ -18,7 +18,8 @@ class Dropdown extends Form {
     }
 
     public function renderLabel() {
-        echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
+        if(!empty($this->labelText))
+            echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
     }
 
     public function renderFormElements() {

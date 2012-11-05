@@ -13,7 +13,8 @@ class FormInput extends Form {
     }
 
     public function renderLabel() {
-        echo '<label for="' .$this->selectId .'" class="ui-input-text">' .$this->labelText .'</label>';
+        if(!empty($this->labelText))
+            echo '<label for="' .$this->selectId .'" class="ui-input-text">' .$this->labelText .'</label>';
     }
 
     public function renderFormElements() {

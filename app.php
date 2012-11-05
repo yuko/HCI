@@ -98,7 +98,7 @@
 
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
-    $pages['add-card']->setContent('');
+    //$pages['add-card']->setContent('');
 /*        
 <form action="app.php#add-category" method="get" data-ajax="false">
 
@@ -121,7 +121,8 @@
     
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
-    $pages['add-category']->addModule(new Button('#', 'true', 'back', 'Back'));
+    $pages['add-category']->addModule(new Dropdown('app.php', "I'm ready to add", 0, true, 'add-category', null, $categories));
+    $pages['add-category']->addModule($button_back);
 
 
     $pages['view']->setHeader('View');
