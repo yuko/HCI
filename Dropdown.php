@@ -28,7 +28,6 @@ class Dropdown extends Module {
 
         echo '<option value="none">-- Select --</option>';
         for($i = 0; $i < sizeOf($this->options); $i++) {
-
             // todo - hardcoded for nickname. change
             echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getNickname() .'</option>';
         }

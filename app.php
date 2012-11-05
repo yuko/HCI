@@ -4,6 +4,7 @@
     include 'Nav.php';
     include 'Page.php';
     include 'Button.php';
+    include 'Form.php';
     include 'Dropdown.php';
 
     // init cards
@@ -70,6 +71,7 @@
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
+    /********* works. testing Form class
     $pages['add-date']->setContent('
 <form action="app.php#add-card" method="get" data-ajax="false">
 
@@ -82,6 +84,16 @@
 </form>
 '
 );
+****************/
+    $pages['add-date']->addModule(
+    
+        new Form('app.php#add-date', 
+            'add-date'.
+            'Date:',
+            'date',
+            'Next'
+        )
+    );
     $pages['add-date']->addModule(new Button('#', 'true', 'back', 'Back'));
 
     $pages['add-card']->setHeader('Add');
@@ -103,8 +115,6 @@
 </form>
  */
 
-
-    print_r($cards);
     $pages['add-card']->addModule(new Dropdown(0, true, 'add-card', 'Select Card/Bank Acct', $cards));
     $pages['add-card']->addModule(new Button('#', 'true', 'back', 'Back'));
  
