@@ -128,9 +128,11 @@
     $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
     $pages['add-card']->addModule($button_back);
     
+    print_r($categories);
+
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
-    $pages['add-category']->addModule(new Dropdown('app.php', "I'm ready to add", 0, true, 'add-category', null, $categories));
+    $pages['add-category']->addModule(new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories));
     $pages['add-category']->addModule($button_back);
 
 
