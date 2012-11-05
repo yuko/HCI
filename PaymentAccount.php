@@ -13,11 +13,11 @@ class PaymentAccount {
         return $this->id;
     }
 
-    public function getNickname() {
+    public function getName() {
         return $this->nickname;
     }
 
-    public function setNickname($n) {
+    public function setName($n) {
         $this->nickname = $n;
     } 
 
