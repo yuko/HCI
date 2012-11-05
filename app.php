@@ -37,6 +37,7 @@
     // set up pages
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
+    /*
     $pages['add']->setContent('
 <form action="app.php#add-date" method="get" data-ajax="false">
 
@@ -48,6 +49,9 @@
 </form>
 '
 );
+    */
+    $pages['add']->addModule(new Form('app.php#add-date', 'add-amount', null, 'text', 'Next'));
+
 
 
 /*
