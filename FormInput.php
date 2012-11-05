@@ -26,7 +26,7 @@ class FormInput extends Form {
         //echo '<input type="' .$this->inputType .'" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="' .$this->placeHolder .'" />';
 
         for($i = 0; $i < sizeOf($this->inputConfig); $i++) {
-            echo '<input type="' .$this->inputConfig[$i}['inputType'] 
+            echo '<input type="' .$this->inputConfig[$i]['inputType'] 
                 .'" name="' .$this->inputConfig[$i]['selectId'] 
                 .'" id="' .$this->inputConfig['selectId'] 
                 .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="' 
