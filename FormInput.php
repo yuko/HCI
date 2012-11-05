@@ -5,7 +5,7 @@ class FormInput extends Form {
     protected $labelText;
     protected $inputType;
     protected $placeHolder;
-    protected $inputConfig;
+    protected $inputConfig = array();
 
 
     function __construct($a, $bt, $array) {
