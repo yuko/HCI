@@ -29,7 +29,7 @@ class Form extends Module {
         // todo - hardcoded for get & ajax false. Revisit to clean up
         echo '<form action="' .$this->actionUrl .'" method="get" data-ajax="false">';
         echo '<div data-role="fieldcontain" class="ui-field-contain ui-body ui-br">';
-        echo '<label for="' .$this->selectId .'" class="ui-input-text">' .$this->labeltext .'</label>';
+        echo '<label for="' .$this->selectId .'" class="ui-input-text">' .$this->labelText .'</label>';
         echo '<input type="' .$this->inputType .'" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"/>';
         echo '</div>';
 
