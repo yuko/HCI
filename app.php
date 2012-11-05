@@ -88,7 +88,7 @@
     $pages['add-date']->addModule(
     
         new Form('app.php#add-date', 
-            'add-date'.
+            'add-date',
             'Date:',
             'date',
             'Next'
