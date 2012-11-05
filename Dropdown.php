@@ -36,43 +36,9 @@ class Dropdown extends Form {
         }
         echo '</select>';
 
+        //todo - add text field
 
     }
 
-    /*
-    public function render() {
-
-
-        echo '<form action="app.php#add-category" method="get" data-ajax="false">';
-        echo '<div data-role="fieldcontain">';
-
-
-
-
-    
-
-        echo '<label for="' .$this->selectId .'" class="select">' .$this->labelText .'</label>';
-        echo '<select';
-       
-        if($this->inline)
-            echo ' data-inline="true" ';
-       
-        echo 'name="' .$this->selectId .'" id="' .$this->selectId .'">';
-
-        echo '<option value="none">-- Select --</option>';
-        for($i = 0; $i < sizeOf($this->options); $i++) {
-            // todo - hardcoded for nickname. change
-            echo '<option value="' .$this->options[$i]->getId() .'">' .$this->options[$i]->getNickname() .'</option>';
-        }
-        echo '</select>';
-
-
-
-
-        echo '</div><!-- /fieldcontain -->';
-        echo '<button type="submit" name="submit" value="submit" data-inline="true">Next</button>';
-        echo '</form>';
-    }
-    */
 }
 ?>

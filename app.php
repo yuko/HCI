@@ -88,6 +88,8 @@
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
+    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
+    $pages['add-date']->addModule($button_back);
     /********* works. testing Form class
     $pages['add-date']->setContent('
 <form action="app.php#add-card" method="get" data-ajax="false">
@@ -102,11 +104,11 @@
 '
 );
 ****************/
-    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
-    $pages['add-date']->addModule($button_back);
 
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
+    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
+    $pages['add-card']->addModule($button_back);
     //$pages['add-card']->setContent('');
 /*        
 <form action="app.php#add-category" method="get" data-ajax="false">
@@ -124,17 +126,10 @@
 </form>
  */
 
-    //$pages['add-card']->addModule(new Dropdown(0, true, 'add-card', null, $cards));
-    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
-    $pages['add-card']->addModule($button_back);
-    
-    print_r($categories);
-
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
     $pages['add-category']->addModule(new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories));
     $pages['add-category']->addModule($button_back);
-
 
     $pages['view']->setHeader('View');
     $pages['view']->addModule(new Button('#view-cards', null, null, 'Balance by Cards/Bank Accounts', 'arrow-r', 'right'));
@@ -167,7 +162,7 @@
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
     $pages['settings-cards']->addModule(new Button('#settings-cards-add', 'true', null, 'Add New'));
-    $pages['settings-cards']->addModule(new Button('#', 'true', 'back', 'Back'));
+    $pages['settings-cards']->addModule($button_back);
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
@@ -187,7 +182,6 @@
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
     $pages['settings-preferences']->addModule($button_back);
-
 
 
 
