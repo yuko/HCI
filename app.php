@@ -174,13 +174,13 @@
     $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
     //$pages['settings-categories-add']->addModule(new Button('#', 'true', 'back', 'Back'));
-    $pages['settings-categories-add']->addModule($button_back));
+    $pages['settings-categories-add']->addModule($button_back);
 
 
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
     //$pages['settings-preferences']->addModule(new Button('#', 'true', 'back', 'Back'));
-    $pages['settings-preferences']->addModule($button_back));
+    $pages['settings-preferences']->addModule($button_back);
 
 
 
