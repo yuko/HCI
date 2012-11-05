@@ -3,16 +3,16 @@
 class Form extends Module {
     protected $actionUrl;
     protected $buttonText;
-    //protected $selectId;
-    //protected $labelText;
-    //protected $inputType;
+    protected $selectId;
+    protected $labelText;
+    protected $inputType;
 
     function __construct($a, $bt) {
         parent::__construct();
         $this->actionUrl = $a;
-        //$this->selectId = $si;
-        //$this->labelText = $lt;
-        //$this->inputType = $it;
+        $this->selectId = $si;
+        $this->labelText = $lt;
+        $this->inputType = $it;
         $this->buttonText = $bt;
     }
 
@@ -32,11 +32,11 @@ class Form extends Module {
     }
 
     public function renderLabel() {
-        //echo '<label for="' .$this->selectId .'" class="ui-input-text">' .$this->labelText .'</label>';
+        echo '<label for="' .$this->selectId .'" class="ui-input-text">' .$this->labelText .'</label>';
     }
 
     public function renderFormElements() {
-        //echo '<input type="' .$this->inputType .'" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"/>';
+        echo '<input type="' .$this->inputType .'" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset"/>';
     }
 
 }

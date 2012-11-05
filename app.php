@@ -54,7 +54,7 @@
 '
 );
     */
-    $pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next'));
+    $pages['add']->addModule(new Form('app.php#add-date', 'add-amount', null, 'text', 'Next'));
 
 
 
@@ -93,7 +93,7 @@
 '
 );
 ****************/
-    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
+    $pages['add-date']->addModule(new Form('app.php#add-card', 'add-date', null, 'date', 'Next'));
     $pages['add-date']->addModule($button_back);
 
     $pages['add-card']->setHeader('Add');
