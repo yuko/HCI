@@ -1,6 +1,6 @@
 <?php
 
-class FormInput extends Module {
+class FormInput extends Form {
     //protected $actionUrl;
     //protected $buttonText;
     protected $selectId;
