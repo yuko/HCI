@@ -114,10 +114,16 @@
     //$pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
     $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
             array(
-                'selectId' => 'add-card', 
+                'selectId' => 'add-card-id', 
                 'labelText' => null, 
                 'inputType' => 'text',
-                'placeHolder' => 'Or Add New card here',
+                'placeHolder' => 'Or Add New Card? Enter card number (0000-0000)',
+            ),
+            array(
+                'selectId' => 'add-card-name', 
+                'labelText' => null, 
+                'inputType' => 'text',
+                'placeHolder' => "Name it so it's easy to remember later",
             )
         )    
     ));
@@ -155,7 +161,15 @@
 
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
-    $pages['add-category']->addModule(new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories));
+    $pages['add-category']->addModule(new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories, array(
+            array(
+                'selectId' => 'add-category-name', 
+                'labelText' => null, 
+                'inputType' => 'text',
+                'placeHolder' => 'Or Add New Category',
+            )
+        )
+    ));
     $pages['add-category']->addModule($button_back);
 
     $pages['view']->setHeader('View');
