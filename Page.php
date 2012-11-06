@@ -32,6 +32,7 @@ class Page {
         $this->modules[] = $m;
     }
 
+    // todo - need this?
     public function getUrlParam() {
         echo "==============<br>";
         print_r($_GET);

@@ -17,6 +17,17 @@ class Form extends Module {
 
         echo "actionUrl=" .$this->actionUrl ."<br>";
 
+
+        $param = '';    
+        foreach($_GET as $key => $value) {
+            if($key != 'submit' && !empty($param)) {
+                $param .= '&' .$key .'=' .$value;
+            }
+        }
+        
+        echo "param to add to actionUrl=" .$param ."<br>";
+
+
     }
 
     public function render() {
