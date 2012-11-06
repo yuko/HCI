@@ -10,11 +10,11 @@ class FormInputSinglePageAdd extends FormInput {
     }
 
     public function renderButton() {
-        $popupId = '#dummyPopup';
+        $popupId = 'dummyPopup';
 
         echo 'SinglePageAdd!<br>';
-        /*
-        echo '<a href="' .$popupId .'" data-role="button" data-inline="true" data-rel="popup">' .$this->buttonText .'</a>';
+        
+        echo '<a href="#' .$popupId .'" data-role="button" data-inline="true" data-rel="popup">' .$this->buttonText .'</a>';
 
         echo '<div data-role="popup" id="'. $popupId .'">';
         echo '<div data-role="header" data-theme="a" class="ui-corner-top">';
@@ -24,9 +24,9 @@ class FormInputSinglePageAdd extends FormInput {
         echo '<p>Confirmed!</p>';
         echo '</div><!-- /content -->';
         echo '</div><!-- /popup -->';
-         */
+        
 
-
+/* works
         echo '
 <a href="#cate-edit-confirmed" data-role="button" data-inline="true" data-rel="popup">Update</a>
 <div data-role="popup" id="cate-edit-confirmed">
@@ -38,6 +38,7 @@ class FormInputSinglePageAdd extends FormInput {
 </div>
 </div>
             ';
+ */
 
     }
 
