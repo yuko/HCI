@@ -3,9 +3,11 @@
 class FormInputSinglePageAdd extends FormInput {
 
     protected $controller;
+    protetced $selectId;
 
-    function __construct($a, $bt, $array, $c) {
+    function __construct($a, $bt, $array, $s, $c) {
         parent::__construct($a, $bt, $array);
+        $this->selectId = $s;
         $this->controller = $c;
     }
 

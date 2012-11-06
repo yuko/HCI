@@ -1,10 +1,10 @@
 <?php
 
 class FormInput extends Form {
-    protected $selectId;
-    protected $labelText;
-    protected $inputType;
-    protected $placeHolder;
+    //protected $selectId;
+    //protected $labelText;
+    //protected $inputType;
+    //protected $placeHolder;
     protected $inputConfig = array();
 
 

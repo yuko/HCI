@@ -227,7 +227,9 @@
                     'inputType' => 'text',
                     'placeHolder' => "Nick name: name it so it's ready to remember",
                 )
-            )
+            ),
+            'settings-cards-add-popup',
+            $controller
         ));
     $pages['settings-cards-add']->addModule($button_back);
 
@@ -254,7 +256,10 @@
                     'placeHolder' => 'Category Name',
                 ),
             )
-        ));
+        ),
+        'settings-categories-add-popup',
+        $controller
+    );
     $pages['settings-categories-add']->addModule($button_back);
 
     /*
