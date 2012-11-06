@@ -188,7 +188,7 @@
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
-    $pages['settings-cards-add']->addModule(new FormInput('app.php#settings-cards-add', 'Add', array(
+    $pages['settings-cards-add']->addModule(new FormInputSinglePageAdd('app.php#settings-cards-add', 'Add', array(
                 array(
                     'selectId' => 'settings-add-card-id', 
                     'labelText' => null, 
