@@ -14,7 +14,7 @@ class Table extends Module {
         for($i = 0; $i < sizeOf($this->elements); $i++) { 
             echo '<div class="ui-grid-a">';
             echo '<span class="ui-block-a">' .$this->elements[$i]->getId() .'</div>';
-            echo '<span class=""ui-block-b">' .$this->elements[$i]->getName() .'</div>';
+            echo '<span class="ui-block-b">' .$this->elements[$i]->getName() .'</div>';
             echo '</div><!-- /row -->';
         }
         echo '</div><!-- /table  -->';
