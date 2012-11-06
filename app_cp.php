@@ -52,7 +52,7 @@
     // set up pages
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
-    $pages['add']->addModule(new FormInput('app.php#add-date', 'Next', $pages['add']->getUrlParam(), array(
+    $pages['add']->addModule(new FormInput('app.php#add-date', 'Next', array(
                 array(
                     'selectId' => 'add-amount', 
                     'labelText' => null, 
@@ -83,7 +83,7 @@
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
-    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'Next', $pages['add-date']->getUrlParam(), array(
+    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'Next', array(
                 array(
                     'selectId' => 'add-date', 
                     'labelText' => null, 
@@ -111,8 +111,7 @@
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
     //$pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
-    $pages['add-card']->addModule(
-        new Dropdown('app.php#add-category', 'Next', $pages['add-card']->getUrlParam(), 0, true, 'add-card', null, $cards, array(
+    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
             array(
                 'selectId' => 'add-card-id', 
                 'labelText' => null, 
@@ -147,8 +146,7 @@
 
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
-    $pages['add-category']->addModule(
-        new Dropdown('#', "I'm ready to add", $pages['add-category']->getUrlParam(), 0, true, 'add-category', null, $categories, array(
+    $pages['add-category']->addModule(new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories, array(
             array(
                 'selectId' => 'add-category-name', 
                 'labelText' => null, 

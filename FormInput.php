@@ -8,8 +8,8 @@ class FormInput extends Form {
     protected $inputConfig = array();
 
 
-    function __construct($a, $bt, $array) {
-        parent::__construct($a, $bt);
+    function __construct($a, $bt, $ap, $array) {
+        parent::__construct($a, $bt, $ap);
         //$this->selectId = $si;
         //$this->labelText = $lt;
         //$this->inputType = $it;

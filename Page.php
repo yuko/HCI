@@ -32,19 +32,22 @@ class Page {
         $this->modules[] = $m;
     }
 
-    public function getParam() {
-        echo "==============<br>";
-        print_r($_GET);
-        echo "<br>==============<br>";
+    public function getUrlParam() {
+        //echo "==============<br>";
+        //print_r($_GET);
+        //echo "<br>==============<br>";
 
 
         $param = '';    
         foreach($_GET as $key => $value) {
-            $param .= '&' .$key .'=' .$value;
+            if($key != 'submit') {
+                $param .= '&' .$key .'=' .$value;
+            }
         }
 
         echo $param .'<br>';
 
+        return $param;
     }
 
     public function render() {
@@ -57,7 +60,7 @@ class Page {
 
 
 
-        $this->getParam();
+        $this->getUrlParam();
  
  
         $this->renderHeader();
