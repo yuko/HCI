@@ -14,7 +14,7 @@ class Form extends Module {
 
     public function updateActionUrl() {
         $param = explode('#', $this->actionUrl);
-        $this->actionUrl = $param[0] .$this->actionParam .$this->actionParam;
+        $this->actionUrl = $param[0] .$this->actionParam .'#' .$param[1];
     }
 
     public function render() {

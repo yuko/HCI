@@ -33,9 +33,9 @@ class Page {
     }
 
     public function getUrlParam() {
-        //echo "==============<br>";
-        //print_r($_GET);
-        //echo "<br>==============<br>";
+        echo "==============<br>";
+        print_r($_GET);
+        echo "<br>==============<br>";
 
 
         $param = '';    
