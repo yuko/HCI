@@ -30,6 +30,8 @@ class Form extends Module {
         
         echo "param to add to actionUrl=" .$param ."<br>";
 
+        $url = explode('#', $this->actionUrl);
+        echo 'actionUrl should be updated to = ' .$url[0] .'?' .$param .$url[1];
 
     }
 
