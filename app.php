@@ -52,20 +52,6 @@
     // set up pages
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
-    /*
-    $pages['add']->setContent('
-<form action="app.php#add-date" method="get" data-ajax="false">
-
-<div data-role="fieldcontain">
-<input type="text" name="amount" id="amount" placeholder="00.00" value="" />
-</div>
-
-<button type="submit" name="submit" value="submit" data-inline="true">Next</button>
-</form>
-'
-);
-    */
-    //$pages['add']->addModule(new FormInput('app.php#add-date', 'add-amount', null, 'text', 'Next', '00.00', null));
     $pages['add']->addModule(new FormInput('app.php#add-date', 'Next', array(
                 array(
                     'selectId' => 'add-amount', 
@@ -97,7 +83,6 @@
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
-    //$pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
     $pages['add-date']->addModule(new FormInput('app.php#add-card', 'Next', array(
                 array(
                     'selectId' => 'add-date', 
@@ -126,7 +111,30 @@
 
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
-    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
+    //$pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
+    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
+            array(
+                'selectId' => 'add-card', 
+                'labelText' => null, 
+                'inputType' => 'text',
+                'placeHolder' => 'Or Add New card here',
+            )
+        )    
+    ));
+
+
+
+    $pages['add']->addModule(new FormInput('app.php#add-date', 'Next', array(
+                array(
+                    'selectId' => 'add-amount', 
+                    'labelText' => null, 
+                    'inputType' => 'text',
+                    'placeHolder' => '00.00',
+                ))
+            ));
+
+
+
     $pages['add-card']->addModule($button_back);
     //$pages['add-card']->setContent('');
 /*        
@@ -200,16 +208,12 @@
                 )
             )
         ));
-
-
-
     $pages['settings-cards-add']->addModule($button_back);
 
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
     $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
     $pages['settings-categories']->addModule($button_back);
-
 
     $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
@@ -222,8 +226,6 @@
                 ),
             )
         ));
-
- 
     $pages['settings-categories-add']->addModule($button_back);
 
 
