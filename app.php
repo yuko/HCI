@@ -1,4 +1,5 @@
 <?php
+    include 'Entity.php';
     include 'PaymentAccount.php';
     include 'Category.php';
     include 'Module.php';
