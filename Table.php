@@ -26,8 +26,8 @@ class Table extends Module {
             }
             //echo $this->elements[$i]->getName() .'</div>';
 
-            if(!empty($this->url)) echo '<a href="' .$this->url .'?edit-id=' .$this->elements[$i]->getId() .'">';
-            //if(!empty($this->url)) echo '<a href="' .$this->url .'">';
+            //if(!empty($this->url)) echo '<a href="' .$this->url .'?edit-id=' .$this->elements[$i]->getId() .'">';
+            if(!empty($this->url)) echo '<a href="' .$this->url .'">';
             echo $this->elements[$i]->getName();
             if(!empty($this->url)) echo '</a>';
 

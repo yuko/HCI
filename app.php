@@ -8,6 +8,7 @@
     include 'Button.php';
     include 'Form.php';
     include 'FormInput.php';
+    include 'FormInputSinglePageAdd.php';
     include 'Dropdown.php';
     include 'Table.php';
  

@@ -18,7 +18,8 @@ class Form extends Module {
         $this->renderFormElements();
         $this->renderHiddenInputs();
         echo '</div>';
-        echo '<button type="submit" name="submit" value="submit" data-inline="true">' .$this->buttonText .'</button>';
+        //echo '<button type="submit" name="submit" value="submit" data-inline="true">' .$this->buttonText .'</button>';
+        $this->renderButton();
         echo '</form>';
     }
 
@@ -37,6 +38,10 @@ class Form extends Module {
                 echo '<input type="hidden" name="' .$key .'" id="' .$key .'" value="' .$value .'" />';
             }
         }
+    }
+
+    public function renderButton() {
+        echo '<button type="submit" name="submit" value="submit" data-inline="true">' .$this->buttonText .'</button>';
     }
 
 }
