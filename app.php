@@ -47,7 +47,7 @@
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings);
     $pages['settings-cards'] = new Page('settings-cards', 'Settings > Cards', $nav_settings); 
     $pages['settings-cards-add'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
-    $pages['settings-cards-edit'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
+    $pages['settings-cards-edit'] = new Page('settings-cards-edit', 'Settings > Cards > Add', $nav_settings); 
     $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
     $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
     $pages['settings-categories-edit'] = new Page('settings-categories-edit', 'Settings > Categories > Edit', $nav_settings); 
