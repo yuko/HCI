@@ -40,7 +40,7 @@
             new PaymentAccount('23456789', 'Amex #2345'),
             new PaymentAccount('34567890', 'Citibank #3456'),
             new PaymentAccount('00000000', 'Cash')
-        );
+        )
     );
     $controller->setCategories(
         array(
