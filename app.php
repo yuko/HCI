@@ -230,9 +230,15 @@
         ));
     $pages['settings-categories-add']->addModule($button_back);
 
+    /*
     $pages['settings-categories-edit']->setHeader('Settings');
     $pages['settings-categories-edit']->setSubheader('Categories > Edit');
     $pages['settings-categories-edit']->addModule($button_back);
+     */
+    $pages['dummy']->setHeader('Settings');
+    $pages['dummy']->setSubheader('Categories > Edit');
+    $pages['dummy']->addModule($button_back);
+
 
 
     $pages['settings-preferences']->setHeader('Settings');
