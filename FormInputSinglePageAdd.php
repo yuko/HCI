@@ -16,30 +16,16 @@ class FormInputSinglePageAdd extends FormInput {
         
         echo '<a href="#' .$popupId .'" data-role="button" data-inline="true" data-rel="popup">' .$this->buttonText .'</a>';
 
-        echo '<div data-role="popup" id="'. $popupId .'">';
+        echo '<div data-role="popup" id="'. $popupId .'" style="max-width:350px;">';
         echo '<div data-role="header" data-theme="a" class="ui-corner-top">';
         echo '<h2>Category Updated</h2>';
         echo '</div><!-- /header -->';
         echo '<div data-role="content">';
         echo '<p>Confirmed!</p>';
+        echo '<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>';
         echo '</div><!-- /content -->';
         echo '</div><!-- /popup -->';
         
-
-/* works
-        echo '
-<a href="#cate-edit-confirmed" data-role="button" data-inline="true" data-rel="popup">Update</a>
-<div data-role="popup" id="cate-edit-confirmed">
-<div data-role="header" data-theme="a" class="ui-corner-top">
-<h2>Category Updated</h2>
-</div>
-<div data-role="content">
-<p>Confirmed!</p>
-</div>
-</div>
-            ';
- */
-
     }
 
 }
