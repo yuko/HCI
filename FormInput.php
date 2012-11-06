@@ -10,10 +10,6 @@ class FormInput extends Form {
 
     function __construct($a, $bt, $array) {
         parent::__construct($a, $bt);
-        //$this->selectId = $si;
-        //$this->labelText = $lt;
-        //$this->inputType = $it;
-        //$this->placeHolder = $ph;
         $this->inputConfig = $array;
     }
 
@@ -23,8 +19,6 @@ class FormInput extends Form {
     }
 
     public function renderFormElements() {
-        //echo '<input type="' .$this->inputType .'" name="' .$this->selectId .'" id="' .$this->selectId .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="' .$this->placeHolder .'" />';
-
         for($i = 0; $i < sizeOf($this->inputConfig); $i++) {
             echo '<input type="' .$this->inputConfig[$i]['inputType'] 
                 .'" name="' .$this->inputConfig[$i]['selectId'] 

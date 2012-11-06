@@ -33,7 +33,7 @@ class Page {
     }
 
     // todo - need this?
-    public function getUrlParam() {
+    /*public function getUrlParam() {
         echo "==============<br>";
         print_r($_GET);
         echo "<br>==============<br>";
@@ -46,10 +46,11 @@ class Page {
             }
         }
 
-        echo 'Page getUrlParam()=' .$param .'<br>';
 
         return $param;
     }
+     */
+
 
     public function render() {
         echo '<div data-role="page" id="' .$this->id .'" data-title="' .$this->title .'">';
@@ -61,7 +62,7 @@ class Page {
 
 
 
-        $this->getUrlParam();
+        //$this->getUrlParam();
  
  
         $this->renderHeader();
