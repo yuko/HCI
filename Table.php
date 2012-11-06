@@ -4,10 +4,12 @@ class Table extends Module {
 
     protected $elements = array();
     protected $showId;
+    protected $url;
 
-    function __construct($e, $s = false) {
+    function __construct($e, $u = null, $s = false) {
         parent::__construct();
         $this->elements = $e;
+        $this->url = $u;
         $this->showId = $s;
     }
 
@@ -22,8 +24,14 @@ class Table extends Module {
             } else {   
                 echo '<div class="ui-block-a">';
             }
-            echo $this->elements[$i]->getName() .'</div>';
-           
+            //echo $this->elements[$i]->getName() .'</div>';
+
+            if(!empty($this->url)) echo '<a href="' .$this->url .'?edit-id=' .$this->elements[$i]->getId() .'">';
+            echo $this->elements[$i]->getName();
+            if(!empty($this->url)) echo '</a>';
+
+            echo '</div>';
+ 
             echo '</div><!-- /ui-grid-a -->';
         }
         echo '</div><!-- /table  -->';

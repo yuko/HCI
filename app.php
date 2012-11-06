@@ -47,6 +47,7 @@
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings);
     $pages['settings-cards'] = new Page('settings-cards', 'Settings > Cards', $nav_settings); 
     $pages['settings-cards-add'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
+    $pages['settings-cards-edit'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
     $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
     $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
@@ -179,7 +180,7 @@
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
-    $pages['settings-cards']->addModule(new Table($cards));
+    $pages['settings-cards']->addModule(new Table($cards, '#settings-cards-edit'));
     $pages['settings-cards']->addModule(new Button('#settings-cards-add', 'true', null, 'Add New'));
     $pages['settings-cards']->addModule($button_back);
 
@@ -202,9 +203,16 @@
         ));
     $pages['settings-cards-add']->addModule($button_back);
 
+    $pages['settings-cards-edit']->setHeader('Settings');
+    $pages['settings-cards-edit']->setSubheader('Cards/Bank Accounts > Edit');
+    $pages['settings-cards-edit']->addModule($button_back);
+
+
+
+
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
-    $pages['settings-categories']->addModule(new Table($categories));
+    $pages['settings-categories']->addModule(new Table($categories, '#settings-categories-edit'));
     $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
     $pages['settings-categories']->addModule($button_back);
 
@@ -220,6 +228,11 @@
             )
         ));
     $pages['settings-categories-add']->addModule($button_back);
+
+    $pages['settings-categories-edit']->setHeader('Settings');
+    $pages['settings-categories-edit']->setSubheader('Categories > Edit');
+    $pages['settings-categories-edit']->addModule($button_back);
+
 
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
