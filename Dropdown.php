@@ -9,11 +9,11 @@ class Dropdown extends Form {
     protected $options = array();
     protected $inputConfig = array();
 
-    function __construct($a, $bt, $s = 0, $i=true, $si = null, $lt, $o, $ic) {
+    function __construct($a, $bt, $s = 0, $i=true, $si, $lt, $o, $ic) {
         parent::__construct($a, $bt);
         $this->selectedIndex = $s;
         $this->inline = $i;
-        $this->selectId;
+        $this->selectId =$si;
         $this->labelText = $lt;
         $this->options = $o;
         $this->inputConfig = $ic;
