@@ -45,7 +45,7 @@ class Page {
             }
         }
 
-        echo $param .'<br>';
+        echo 'Page getUrlParam()=' .$param .'<br>';
 
         return $param;
     }
