@@ -9,7 +9,7 @@ class Dropdown extends Form {
     protected $options = array();
     protected $inputConfig = array();
 
-    function __construct($a, $bt, $ap, s = 0, $i=true, $si = null, $lt, $o, $ic) {
+    function __construct($a, $bt, $ap, $s = 0, $i=true, $si = null, $lt, $o, $ic) {
         parent::__construct($a, $bt, $ap);
         $this->selectedIndex = $s;
         $this->inline = $i;
