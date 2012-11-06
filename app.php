@@ -53,6 +53,7 @@
         )
     );
 
+    $controller->addCategory(new Category(6, 'bar'));
 
 
     // "Back" button

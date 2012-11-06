@@ -23,6 +23,13 @@ class Controller {
     public function setCategories($array) {
         $this->ctl_categories = $array;
     }
+
+    public function addCategory($c) {
+        if($c instanceof Category){
+            $this->ctl_categories[] = $c;
+        }
+    }
+
 }
 
 ?>
