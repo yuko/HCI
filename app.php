@@ -185,6 +185,24 @@
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
+    $pages['settings-cards-add']->addModule(new FormInput('app.php#settings-cards-add', 'Add', array(
+                array(
+                    'selectId' => 'settings-add-card-id', 
+                    'labelText' => null, 
+                    'inputType' => 'text',
+                    'placeHolder' => 'Card Number: 0000-0000',
+                ),
+                array(
+                    'selectId' => 'settings-add-card-name', 
+                    'labelText' => null, 
+                    'inputType' => 'text',
+                    'placeHolder' => "Nick name: name it so it's ready to remember",
+                )
+            )
+        ));
+
+
+
     $pages['settings-cards-add']->addModule($button_back);
 
     $pages['settings-categories']->setHeader('Settings');
@@ -195,6 +213,17 @@
 
     $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
+    $pages['settings-categories-add']->addModule(new FormInput('app.php#settings-categories-add', 'Add', array(
+                array(
+                    'selectId' => 'settings-add-category', 
+                    'labelText' => null, 
+                    'inputType' => 'text',
+                    'placeHolder' => 'Category Name',
+                ),
+            )
+        ));
+
+ 
     $pages['settings-categories-add']->addModule($button_back);
 
 
