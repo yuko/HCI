@@ -5,7 +5,7 @@ class Transaction extends Entity {
     protected $cardId;
     protected $categoryId;
     protected $date;
-    protected $amont;
+    protected $amount;
 
     function __construct($i = null, $n = null, $a, $d, $card, $cate) {
         parent::__construct($i, $n);
@@ -23,6 +23,13 @@ class Transaction extends Entity {
         return $this->categoryId;
     }
 
+    public function getDate() {
+        return $this->date;
+    }
+
+    public function getAmount() {
+        retuen $this->amount;
+    }
 
 }
 ?>

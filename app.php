@@ -13,6 +13,7 @@
     include 'FormInputSinglePageAdd.php';
     include 'Dropdown.php';
     include 'Table.php';
+    include 'TransactionTable.php';
 
 /*a
 
@@ -205,6 +206,7 @@
 
     $pages['view-cards']->setHeader('View');
     $pages['view-cards']->setSubheader('Balance by Cards');
+    $pages['view-cards']->addModule(new TransactionTable($controller->getTransactions(), '#view-cards-edit'));
     $pages['view-cards']->addModule($button_back);
 
     $pages['view-categories']->setHeader('View');
