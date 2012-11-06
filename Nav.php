@@ -13,22 +13,19 @@ class Nav extends Module {
     }
 
     public function render() {
-        unset($_GET);
-
-
         $selected = ' class="ui-btn-active ui-state-persist"';
 
         $base = '<div data-role="navbar">
                     <ul>
-                    <li><a href="#add"';
+                    <li><a href="#add" id="nav-add"';
         if($this->activeTab == Nav::ADD) $base .= $selected;
         $base .= '>Add</a></li>';
 
-        $base .= '<li><a href="#view"';
+        $base .= '<li><a href="#view" id="nav-view"';
         if($this->activeTab == Nav::VIEW) $base .= $selected;
         $base .= '>View</a></li>'; 
 
-        $base .= '<li><a href="#settings"';        
+        $base .= '<li><a href="#settings" id="nav-settings"';        
         if($this->activeTab == Nav::SETTINGS) $base .= $selected;
         $base .= '>Settings</a></li>
                 </ul>
