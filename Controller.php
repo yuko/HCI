@@ -7,16 +7,22 @@ class Controller {
 
     function __construct() {
     }
-    
+
+    public function getCards() {
+        return $this->ctl_cards;
+    }
+
     public function setCards($array) {
         $this->ctl_cards = $array;
     }
 
-    public function setCategories($array) {
-        //$this->ctl_categories = $ array;
-        echo 'setCategories()';
+    public function getCategories() {
+        return $this->ctl_categories;
     }
 
+    public function setCategories($array) {
+        $this->ctl_categories = $ array;
+    }
 }
 
 ?>

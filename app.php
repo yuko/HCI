@@ -13,9 +13,7 @@
     include 'Dropdown.php';
     include 'Table.php';
 
-    // init controller
-    $controller = new Controller();
-    $controller->setCategories();
+/*a
 
     // init cards
     $cards = array();
@@ -32,6 +30,30 @@
     $categories[] = new Category(3, 'Entertainment');
     $categories[] = new Category(4, 'Eating out');
     $categories[] = new Category(5, 'Miscellaneous');
+ */
+
+    // init controller
+    $controller = new Controller();
+    $controller->setCards(
+        array(
+            new PaymentAccount('12345678', 'Visa #1234'),
+            new PaymentAccount('23456789', 'Amex #2345'),
+            new PaymentAccount('34567890', 'Citibank #3456'),
+            new PaymentAccount('00000000', 'Cash')
+        );
+    );
+    $controller->setCategories(
+        array(
+            new Category(0, 'Utilities'),
+            new Category(1, 'Transportation'),
+            new Category(2, 'Groceries'),
+            new Category(3, 'Entertainment'),
+            new Category(4, 'Eating out'),
+            new Category(5, 'Miscellaneous')
+        )
+    );
+
+
 
     // "Back" button
     $button_back = new Button('#', 'true', 'back', 'Back');
@@ -121,7 +143,7 @@
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
     $pages['add-card']->addModule(
-        new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
+        new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $controller->getCards(), array(
             array(
                 'selectId' => 'add-card-id', 
                 'labelText' => null, 
@@ -157,7 +179,7 @@
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
     $pages['add-category']->addModule(
-        new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories, array(
+        new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $controller->getCategories(), array(
             array(
                 'selectId' => 'add-category-name', 
                 'labelText' => null, 
@@ -187,7 +209,7 @@
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
-    $pages['settings-cards']->addModule(new Table($cards, '#settings-cards-edit'));
+    $pages['settings-cards']->addModule(new Table($controller->getCards(), '#settings-cards-edit'));
     $pages['settings-cards']->addModule(new Button('#settings-cards-add', 'true', null, 'Add New'));
     $pages['settings-cards']->addModule($button_back);
 
@@ -219,7 +241,7 @@
 
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
-    $pages['settings-categories']->addModule(new Table($categories, '#settings-categories-edit'));
+    $pages['settings-categories']->addModule(new Table($controller->getCategories(), '#settings-categories-edit'));
     $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
     $pages['settings-categories']->addModule($button_back);
 
