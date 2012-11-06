@@ -53,7 +53,7 @@ class Controller {
 
     public function getTransactionsForCard($cardId) {
         $temp = array();
-        for($i = 0; $i < sizeOf($this->ctl_trans; $i++)) {
+        for($i = 0; $i < sizeOf($this->ctl_trans); $i++) {
             if($this->ctl_tras[$i]->getCardId() == $cardId ) {
                 $temp[] = $this->ctl_trans[$i];
             }
