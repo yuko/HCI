@@ -92,7 +92,6 @@
                 )
             )
         ));
-
     $pages['add-date']->addModule($button_back);
     /********* works. testing Form class
     $pages['add-date']->setContent('
@@ -127,20 +126,6 @@
             )
         )    
     ));
-
-
-
-    $pages['add']->addModule(new FormInput('app.php#add-date', 'Next', array(
-                array(
-                    'selectId' => 'add-amount', 
-                    'labelText' => null, 
-                    'inputType' => 'text',
-                    'placeHolder' => '00.00',
-                ))
-            ));
-
-
-
     $pages['add-card']->addModule($button_back);
     //$pages['add-card']->setContent('');
 /*        
@@ -180,25 +165,14 @@
     $pages['view-cards']->setSubheader('Balance by Cards');
     $pages['view-cards']->addModule($button_back);
 
-
     $pages['view-categories']->setHeader('View');
     $pages['view-categories']->setSubheader('Balance by Categories');
     $pages['view-categories']->addModule($button_back);
-
-
 
     $pages['settings']->setHeader('Settings'); 
     $pages['settings']->addModule(new Button('#settings-cards', null, null, 'Cards/Bank Accounts', 'arrow-r', 'right'));
     $pages['settings']->addModule(new Button('#settings-categories', null, null, 'Categories', 'arrow-r', 'right'));
     $pages['settings']->addModule(new Button('#settings-preferences', null, null, 'Preferences', 'arrow-r', 'right'));
-    /*
-    $pages['settings']->setContent(
-        '<div data-role="settings_btn">
-        <a href="#settings-cards" data-role="button" data-icon="arrow-r" data-iconpos="right">Cards/Bank Accounts</a>
-        <a href="#settings-categories" data-role="button" data-icon="arrow-r" data-iconpos="right">Categories</a>
-        <a href="#settings-preferences" data-role="button" data-icon="arrow-r" data-iconpos="right">Preferences</a>
-        </div>');
-    */
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
@@ -241,7 +215,6 @@
             )
         ));
     $pages['settings-categories-add']->addModule($button_back);
-
 
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');

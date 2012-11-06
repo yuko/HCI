@@ -39,6 +39,18 @@ class Page {
         echo '</div><!-- /header -->';
 
         echo '<div data-role="content">';
+
+
+
+
+
+        echo "==============<br>";
+        print_r($_GET);
+        echo "==============<br>";
+ 
+ 
+ 
+ 
         $this->renderHeader();
         $this->renderSubheader();
         $this->renderContent();
