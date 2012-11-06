@@ -21,7 +21,7 @@ class Controller {
     }
 
     public function setCategories($array) {
-        $this->ctl_categories = $ array;
+        $this->ctl_categories = $array;
     }
 }
 
