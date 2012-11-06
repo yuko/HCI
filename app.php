@@ -55,8 +55,8 @@
     );
     $controller->setTransactions(
         array(
-            new Transaction('12345678', 'Visa #1234'),
-            new Transaction('23456789', 'Amex #2345'),
+            new Transaction(0, '', '10.23', '10/14/2012', 0, 1),
+            new Transaction(1, '', '26.81', '10/16/2012', 0, 2),
         )
     );
 
