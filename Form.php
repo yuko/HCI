@@ -20,7 +20,6 @@ class Form extends Module {
         print_r($param);
         echo "<br>";
 
-        $this->actionUrl = $param[0] .$this->actionParam .'#' .$param[1];
     }
 
     public function render() {
