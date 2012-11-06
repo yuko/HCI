@@ -64,6 +64,7 @@
 
     // init pages
     $pages = array();
+    //$pages['index'] = new Page('index', 'Add', $nav_add); 
     $pages['add'] = new Page('add', 'Add', $nav_add); 
     $pages['add-date'] = new Page('add-date', 'Add date', $nav_add); 
     $pages['add-card'] = new Page('add-card', 'Add card', $nav_add); 
@@ -214,7 +215,7 @@
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
-    $pages['settings-cards-add']->addModule(new FormInputSinglePageAdd('app.php#settings-cards-add', 'Add', array(
+    $pages['settings-cards-add']->addModule(new FormInputSinglePageAdd('#', 'Add', array(
                 array(
                     'selectId' => 'settings-add-card-id', 
                     'labelText' => null, 
