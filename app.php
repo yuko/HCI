@@ -1,4 +1,5 @@
 <?php
+    include 'Controller.php';
     include 'Entity.php';
     include 'PaymentAccount.php';
     include 'Category.php';
@@ -11,7 +12,11 @@
     include 'FormInputSinglePageAdd.php';
     include 'Dropdown.php';
     include 'Table.php';
- 
+
+    // init controller
+    $controller = new Controller();
+    $controller->setCategories();
+
     // init cards
     $cards = array();
     $cards[] = new PaymentAccount('12345678', 'Visa #1234');
@@ -220,7 +225,7 @@
 
     $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
-    $pages['settings-categories-add']->addModule(new FormInput('app.php#settings-categories-add', 'Add', array(
+    $pages['settings-categories-add']->addModule(new FormInputSinglePageAdd('app.php#settings-categories-add', 'Add', array(
                 array(
                     'selectId' => 'settings-add-category', 
                     'labelText' => null, 

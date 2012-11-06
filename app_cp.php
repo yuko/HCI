@@ -1,4 +1,5 @@
 <?php
+    include 'Entity.php';
     include 'PaymentAccount.php';
     include 'Category.php';
     include 'Module.php';
@@ -7,7 +8,15 @@
     include 'Button.php';
     include 'Form.php';
     include 'FormInput.php';
+    include 'FormInputSinglePageAdd.php';
     include 'Dropdown.php';
+    include 'Table.php';
+
+
+    class Controller {
+        function __construct() {
+        }
+    }
 
     // init cards
     $cards = array();
@@ -45,8 +54,10 @@
     $pages['settings'] = new Page('settings', 'Settings', $nav_settings);
     $pages['settings-cards'] = new Page('settings-cards', 'Settings > Cards', $nav_settings); 
     $pages['settings-cards-add'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
+    $pages['settings-cards-edit'] = new Page('settings-cards-edit', 'Settings > Cards > Add', $nav_settings); 
     $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
     $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
+    $pages['settings-categories-edit'] = new Page('settings-categories-edit', 'Settings > Categories > Edit', $nav_settings); 
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
 
     // set up pages
@@ -110,8 +121,8 @@
 
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
-    //$pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
-    $pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
+    $pages['add-card']->addModule(
+        new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
             array(
                 'selectId' => 'add-card-id', 
                 'labelText' => null, 
@@ -146,7 +157,8 @@
 
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
-    $pages['add-category']->addModule(new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories, array(
+    $pages['add-category']->addModule(
+        new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories, array(
             array(
                 'selectId' => 'add-category-name', 
                 'labelText' => null, 
@@ -176,12 +188,13 @@
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
+    $pages['settings-cards']->addModule(new Table($cards, '#settings-cards-edit'));
     $pages['settings-cards']->addModule(new Button('#settings-cards-add', 'true', null, 'Add New'));
     $pages['settings-cards']->addModule($button_back);
 
     $pages['settings-cards-add']->setHeader('Settings');
     $pages['settings-cards-add']->setSubheader('Cards/Bank Accounts > Add New');
-    $pages['settings-cards-add']->addModule(new FormInput('app.php#settings-cards-add', 'Add', array(
+    $pages['settings-cards-add']->addModule(new FormInputSinglePageAdd('app.php#settings-cards-add', 'Add', array(
                 array(
                     'selectId' => 'settings-add-card-id', 
                     'labelText' => null, 
@@ -198,14 +211,22 @@
         ));
     $pages['settings-cards-add']->addModule($button_back);
 
+    $pages['settings-cards-edit']->setHeader('Settings');
+    $pages['settings-cards-edit']->setSubheader('Cards/Bank Accounts > Edit');
+    $pages['settings-cards-edit']->addModule($button_back);
+
+
+
+
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
+    $pages['settings-categories']->addModule(new Table($categories, '#settings-categories-edit'));
     $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
     $pages['settings-categories']->addModule($button_back);
 
     $pages['settings-categories-add']->setHeader('Settings');
     $pages['settings-categories-add']->setSubheader('Categories > Add');
-    $pages['settings-categories-add']->addModule(new FormInput('app.php#settings-categories-add', 'Add', array(
+    $pages['settings-categories-add']->addModule(new FormInputSinglePageAdd('app.php#settings-categories-add', 'Add', array(
                 array(
                     'selectId' => 'settings-add-category', 
                     'labelText' => null, 
@@ -216,9 +237,21 @@
         ));
     $pages['settings-categories-add']->addModule($button_back);
 
+    /*
+    $pages['settings-categories-edit']->setHeader('Settings');
+    $pages['settings-categories-edit']->setSubheader('Categories > Edit');
+    $pages['settings-categories-edit']->addModule($button_back);
+     */
+    $pages['settings-categories-edit']->setHeader('Settings');
+    $pages['settings-categories-edit']->setSubheader('Categories > Edit');
+    $pages['settings-categories-edit']->addModule($button_back);
+
+
+
     $pages['settings-preferences']->setHeader('Settings');
     $pages['settings-preferences']->setSubheader('Preferences');
     $pages['settings-preferences']->addModule($button_back);
+
 
 
 
