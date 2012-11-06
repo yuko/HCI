@@ -52,9 +52,7 @@
             new Category(5, 'Miscellaneous')
         )
     );
-
-    $controller->addCategory(new Category(6, 'bar'));
-
+    $controller->addCard(new PaymentAccount('111111', 'bar'));
 
     // "Back" button
     $button_back = new Button('#', 'true', 'back', 'Back');

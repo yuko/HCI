@@ -16,6 +16,12 @@ class Controller {
         $this->ctl_cards = $array;
     }
 
+    public function addCard($c) {
+        if($c instanceof Entity){
+            $this->ctl_cards[] = $c;
+        }
+    }
+
     public function getCategories() {
         return $this->ctl_categories;
     }
@@ -25,7 +31,7 @@ class Controller {
     }
 
     public function addCategory($c) {
-        if($c instanceof Category){
+        if($c instanceof Entity){
             $this->ctl_categories[] = $c;
         }
     }
