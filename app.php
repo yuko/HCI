@@ -110,7 +110,6 @@
 
     $pages['add-card']->setHeader('Add');
     $pages['add-card']->setSubheader('Which card/bank account did you use? (step 3 of 4)'); 
-    //$pages['add-card']->addModule(new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards));
     $pages['add-card']->addModule(
         new Dropdown('app.php#add-category', 'Next', 0, true, 'add-card', null, $cards, array(
             array(

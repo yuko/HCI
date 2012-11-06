@@ -25,7 +25,7 @@ class Dropdown extends Form {
     }
 
     public function renderFormElements() {
-        echo '<select';
+        echo '<select name="' .$this->selectId .'" id="' .$this->selectId .'"';
        
         if($this->inline)
             echo ' data-inline="true" ';
