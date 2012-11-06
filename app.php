@@ -178,6 +178,7 @@
 
     $pages['settings-cards']->setHeader('Settings');
     $pages['settings-cards']->setSubheader('Cards/Bank Accounts');
+    $pages['settings-cards']->addModule(new Table($cards));
     $pages['settings-cards']->addModule(new Button('#settings-cards-add', 'true', null, 'Add New'));
     $pages['settings-cards']->addModule($button_back);
 

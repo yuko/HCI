@@ -12,7 +12,17 @@ class Nav extends Module {
         $this->activeTab = $active;
     }
 
+    public function cleanGet() {
+/*
+ $("#nav-add").click(function(e) {
+             alert("yo");
+                 });
+ */
+    }
+
     public function render() {
+        $this->cleanGet();
+
         $selected = ' class="ui-btn-active ui-state-persist"';
 
         $base = '<div data-role="navbar">
