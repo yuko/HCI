@@ -97,7 +97,17 @@
 
     $pages['add-date']->setHeader('Add');
     $pages['add-date']->setSubheader('When did you buy? (Step 2 of 4)');
-    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
+    //$pages['add-date']->addModule(new FormInput('app.php#add-card', 'add-date', null, 'date', 'Next'));
+    $pages['add-date']->addModule(new FormInput('app.php#add-card', 'Next', array(
+                array(
+                    'selectId' => 'add-date', 
+                    'labelText' => null, 
+                    'inputType' => 'date',
+                    'placeHolder' => null,
+                )
+            )
+        ));
+
     $pages['add-date']->addModule($button_back);
     /********* works. testing Form class
     $pages['add-date']->setContent('

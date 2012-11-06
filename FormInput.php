@@ -30,14 +30,8 @@ class FormInput extends Form {
                 .'" name="' .$this->inputConfig[$i]['selectId'] 
                 .'" id="' .$this->inputConfig['selectId'] 
                 .'" value="" class="ui-input-text ui-body-c ui-corner-all ui-shadow-inset" placeholder="' 
-                .$this->inputConfig[$i]['placeHolder'] .'" />';
-            
+                .$this->inputConfig[$i]['placeHolder'] .'" />';           
         }
-
-
-
-
-
     }
 
 }
