@@ -57,7 +57,7 @@ class Page {
 
 
 
-        //$this->getParam();
+        $this->getParam();
  
  
         $this->renderHeader();
