@@ -14,8 +14,8 @@ class FormInputSinglePageAdd extends FormInput {
     public function renderButton() {
         $popupId = $this->selectId; //'dummyPopup';
 
-        //echo '<a href="#' .$popupId .'" data-role="button" data-inline="true" data-rel="popup">' .$this->buttonText .'</a>';
-        echo '<button type="submit" data-rel="popup">' .$this->buttonText .'</button>';
+        echo '<a href="#' .$popupId .'" data-role="button" data-inline="true" data-rel="popup">' .$this->buttonText .'</a>';
+        //echo '<button type="submit" data-inline="true" data-rel="popup">' .$this->buttonText .'</button>';
  
         echo '<div data-role="popup" id="'. $popupId .'" style="min-width:350px;">';
         echo '<div data-role="header" data-theme="a" class="ui-corner-top">';
