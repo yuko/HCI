@@ -147,6 +147,11 @@
 
     $pages['add-category']->setHeader('Add');
     $pages['add-category']->setSubheader('When category does the purchase fall into? (step 4 of 4)');
+
+    print_r($categories);
+    echo '<br>';
+
+
     $pages['add-category']->addModule(
         new Dropdown('#', "I'm ready to add", 0, true, 'add-category', null, $categories, array(
             array(
