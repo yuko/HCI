@@ -15,6 +15,7 @@ class Form extends Module {
     public function updateActionUrl() {
         $param = explode('#', $this->actionUrl);
 
+        echo 'updateActionUrl=<br>';
         print_r($param);
         echo "<br>";
 
