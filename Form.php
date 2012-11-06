@@ -3,22 +3,19 @@
 class Form extends Module {
     protected $actionUrl;
     protected $buttonText;
-    protected $actionParam;
+    //protected $actionParam;
 
     function __construct($a, $bt, $ap) {
         parent::__construct();
         $this->actionUrl = $a;
         $this->buttonText = $bt;
-        $this->actionParam = $ap;
+        //$this->actionParam = $ap;
     }
 
     public function updateActionUrl() {
         echo 'updateActionUrl()<br>';
-        echo 'actionParam=' .$this->actionParam;
 
-        $param = explode('#', $this->actionParam);
-        print_r($param);
-        echo "<br>";
+        echo "actionUrl=" .$this->actionUrl ."<br>";
 
     }
 
