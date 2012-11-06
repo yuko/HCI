@@ -204,6 +204,7 @@
 
     $pages['settings-categories']->setHeader('Settings');
     $pages['settings-categories']->setSubheader('Categories');
+    $pages['settings-categories']->addModule(new Table($categories));
     $pages['settings-categories']->addModule(new Button('#settings-categories-add', 'true', null, 'Add New'));
     $pages['settings-categories']->addModule($button_back);
 
