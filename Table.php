@@ -10,6 +10,9 @@ class Table extends Module {
     }
 
     public function render() {
+
+        print_r($this->elements);
+
         echo '<div class="table">';
         for($i = 0; $i < sizeOf($this->elements); $i++) { 
             echo '<div class="row">';
