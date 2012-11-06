@@ -9,7 +9,8 @@
     include 'Form.php';
     include 'FormInput.php';
     include 'Dropdown.php';
-
+    include 'Table.php';
+ 
     // init cards
     $cards = array();
     $cards[] = new PaymentAccount('12345678', 'Visa #1234');
