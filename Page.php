@@ -32,6 +32,21 @@ class Page {
         $this->modules[] = $m;
     }
 
+    public function getParam() {
+        echo "==============<br>";
+        print_r($_GET);
+        echo "<br>==============<br>";
+
+
+        $param = '';    
+        foreach($_GET as $key => $value) {
+            $param .= '&' .$key .'=' .$value;
+        }
+
+        echo $param .'<br>';
+
+    }
+
     public function render() {
         echo '<div data-role="page" id="' .$this->id .'" data-title="' .$this->title .'">';
         echo '<div data-role="header" data-position="fixed">';
@@ -42,13 +57,7 @@ class Page {
 
 
 
-
-
-        echo "==============<br>";
-        print_r($_GET);
-        echo "==============<br>";
- 
- 
+        //$this->getParam();
  
  
         $this->renderHeader();
