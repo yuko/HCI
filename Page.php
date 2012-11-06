@@ -40,7 +40,7 @@ class Page {
 
         $param = '';    
         foreach($_GET as $key => $value) {
-            if($key != 'submit') {
+            if($key != 'submit' && !empty($param)) {
                 $param .= '&' .$key .'=' .$value;
             }
         }
