@@ -23,8 +23,8 @@ class Table extends Module {
             echo 'i=' .$i;
 
             echo '<div class="row">';
-            //echo '<span class="id">' .$this->elements[$i]['id'] .'</span>';
-            //echo '<span class="name">' .$this->elements[$i]['name'] .'</span>';
+            echo '<span class="id">' .$this->elements[$i]->getId() .'</span>';
+            echo '<span class="name">' .$this->elements[$i]->getName() .'</span>';
             echo '</div><!-- /row -->';
         }
         echo '</div><!-- /table  -->';
