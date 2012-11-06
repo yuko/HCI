@@ -4,6 +4,7 @@ class Controller {
 
     protected $ctl_cards = array();
     protected $ctl_categories = array();
+    protected $ctl_trans = array();
 
     function __construct() {
     }
@@ -33,6 +34,20 @@ class Controller {
     public function addCategory($c) {
         if($c instanceof Entity){
             $this->ctl_categories[] = $c;
+        }
+    }
+
+    public function getTransactions() {
+        return $this->ctl_trans;
+    }
+
+    public function setTransactions($array) {
+        $this->ctl_trans = $array;
+    }
+
+    public function addTransaction($c) {
+        if($c instanceof Entity){
+            $this->ctl_trans[] = $c;
         }
     }
 

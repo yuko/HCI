@@ -3,6 +3,7 @@
     include 'Entity.php';
     include 'PaymentAccount.php';
     include 'Category.php';
+    include 'Transaction.php';
     include 'Module.php';
     include 'Nav.php';
     include 'Page.php';
@@ -52,6 +53,14 @@
             new Category(5, 'Miscellaneous')
         )
     );
+    $controller->setTransactions(
+        array(
+            new Transaction('12345678', 'Visa #1234'),
+            new Transaction('23456789', 'Amex #2345'),
+        )
+    );
+
+
     //$controller->addCard(new PaymentAccount('111111', 'bar'));
 
     // "Back" button
