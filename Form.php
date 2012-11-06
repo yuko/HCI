@@ -13,7 +13,8 @@ class Form extends Module {
     }
 
     public function updateActionUrl() {
-        $this->actionUrl .= $this->actionParam;
+        $param = explode('#', $this->actionUrl);
+        $this->actionUrl = $param[0] .$this->actionParam .$this->actionParam;
     }
 
     public function render() {
