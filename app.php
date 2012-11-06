@@ -224,9 +224,6 @@
 
 
 
-    // reset _GET
-    unset($_GET);
-
 
     ////////// render page
     echo '<html>';
