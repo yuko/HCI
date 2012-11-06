@@ -50,6 +50,7 @@
     $pages['settings-cards-edit'] = new Page('settings-cards-add', 'Settings > Cards > Add', $nav_settings); 
     $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
     $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
+    $pages['settings-categories-edit'] = new Page('settings-categories-edit', 'Settings > Categories > Edit', $nav_settings); 
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
 
     // set up pages
