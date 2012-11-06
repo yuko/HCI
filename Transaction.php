@@ -28,7 +28,7 @@ class Transaction extends Entity {
     }
 
     public function getAmount() {
-        retuen $this->amount;
+        return $this->amount;
     }
 
 }
