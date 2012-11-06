@@ -33,7 +33,7 @@ class Form extends Module {
         $url = explode('#', $this->actionUrl);
 
         if(!empty($param)) {
-            echo 'actionUrl should be updated to = ' .$url[0] .'?' .$param .$url[1];
+            echo 'actionUrl should be updated to = ' .$url[0] .'?' .$param .'#' .$url[1];
         } else
             echo 'actionUrl should be updated to = ' .$url[0] .'#' .$url[1];
 
