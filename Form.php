@@ -21,7 +21,10 @@ class Form extends Module {
         $param = '';    
         foreach($_GET as $key => $value) {
             if($key != 'submit') {
-                $param .= '&' .$key .'=' .$value;
+                if(!empty($param))
+                    $param .= '&';
+
+                $param .= $key .'=' .$value;
             }
         }
         
