@@ -50,7 +50,7 @@
     $pages['settings-cards-edit'] = new Page('settings-cards-edit', 'Settings > Cards > Add', $nav_settings); 
     $pages['settings-categories'] = new Page('settings-categories', 'Settings > Categories', $nav_settings); 
     $pages['settings-categories-add'] = new Page('settings-categories-add', 'Settings > Categories > Add', $nav_settings); 
-    $pages['dummy'] = new Page('dummy', 'Settings > Categories > Edit', $nav_settings); 
+    $pages['settings-categories-edit'] = new Page('settings-categories-edit', 'Settings > Categories > Edit', $nav_settings); 
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
 
     // set up pages
@@ -235,9 +235,9 @@
     $pages['settings-categories-edit']->setSubheader('Categories > Edit');
     $pages['settings-categories-edit']->addModule($button_back);
      */
-    $pages['dummy']->setHeader('Settings');
-    $pages['dummy']->setSubheader('Categories > Edit');
-    $pages['dummy']->addModule($button_back);
+    $pages['settings-categories-edit']->setHeader('Settings');
+    $pages['settings-categories-edit']->setSubheader('Categories > Edit');
+    $pages['settings-categories-edit']->addModule($button_back);
 
 
 
