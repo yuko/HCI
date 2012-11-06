@@ -10,9 +10,8 @@ class FormInputSinglePageAdd extends FormInput {
     }
 
     public function renderButton() {
-        $popupId = 'dummyPopup';
+        $popupId = $this->selectId; //'dummyPopup';
 
-        echo 'SinglePageAdd!<br>';
         
         echo '<a href="#' .$popupId .'" data-role="button" data-inline="true" data-rel="popup">' .$this->buttonText .'</a>';
 
@@ -22,8 +21,6 @@ class FormInputSinglePageAdd extends FormInput {
         echo '</div><!-- /header -->';
         echo '<div data-role="content">';
         echo '<p>Confirmed!</p>';
-
-        print_r($this->controller->getCards());
 
         echo '<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">OK</a>';
         echo '</div><!-- /content -->';
