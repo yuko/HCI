@@ -13,6 +13,9 @@ class Nav extends Module {
     }
 
     public function render() {
+        unset($_GET);
+
+
         $selected = ' class="ui-btn-active ui-state-persist"';
 
         $base = '<div data-role="navbar">
