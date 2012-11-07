@@ -66,7 +66,7 @@ class Controller {
     public function getCategoryNameForId($cateId) {
         if(empty($this->ctl_categories)) return 'null yanke';
         else {
-            return $this->ctl_categories[0]->getId();
+            return $this->ctl_categories[0]->getName();
         }
 
         for($i = 0; $i < sizeOf($this->ctl_categories); $i++) {
