@@ -32,8 +32,8 @@ class TransactionTable extends Table {
 
             //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
             echo 'woot=' .$this->elements[$i]->getCategoryId();
-            $cateName = $this->ctl->getCategoryNameForId(3);
-            //$cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
+            //$cateName = $this->ctl->getCategoryNameForId(3);
+            $cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
 
             echo '<div class="ui-block-c">';
             echo '*** ' .$cateName;

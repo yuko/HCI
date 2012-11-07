@@ -74,7 +74,7 @@ class Controller {
         for($i = 0; $i < sizeOf($this->ctl_categories); $i++) {
             if($this->ctl_categories[$i]->getId() == $cateId ) {
                 //return $this->ctl_categories[$i]->getName();
-                return "cardId=" .$cateId ." fu";
+                return "cateId=" .$cateId ." fu";
             }
         }
     }
