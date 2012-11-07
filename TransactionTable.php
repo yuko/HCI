@@ -34,7 +34,8 @@ class TransactionTable extends Table {
             //$cateName = $this->elements[$i]->getCategoryId();
             if(empty($this->ctl)) $cateName='ctl null';
             else {
-                print_r($this->ctl->getCategories());
+                //print_r($this->ctl->getCategories());
+                $cateName = $this->ctl->getCategoryNameForId(2);
                 echo '=============<br>';
             }
 
