@@ -10,12 +10,17 @@ class TransactionTable extends Table {
 
     function __construct($e, $u = null, $s = false, $c) {
         parent::__construct($e, $u, $s);
-        //$this->elements = $e;dd
-        //$this->url = $u;
         $this->ctl= $c;
     }
 
+    // shows all
     public function render() {
+
+        $a = '11.11';
+        $b = '22.22';
+        echo '==== testing: ' (double)$a + (double)$b;
+
+
         echo '<div class="table">';
         for($i = 0; $i < sizeOf($this->elements); $i++) {
             echo '<div class="ui-grid-b">';
@@ -30,13 +35,8 @@ class TransactionTable extends Table {
             if(!empty($this->url)) echo '</a>';
             echo '</div>';
 
-            //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
-            //echo 'woot=' .$this->elements[$i]->getCategoryId();
-            //$cateName = $this->ctl->getCategoryNameForId(3);
             $cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
-
             echo '<div class="ui-block-c">' .$cateName .'</div>';
-
 
             echo '</div><!-- /ui-grid-b -->';
         }
