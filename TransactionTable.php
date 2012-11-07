@@ -32,7 +32,7 @@ class TransactionTable extends Table {
 
 
             //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
-            $cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
+            $cateName = $this->elements[$i]->getCategoryId();
 
             echo '<div class="ui-block-c">';
             echo '*** category name:' .$cateName;
