@@ -18,7 +18,7 @@ class TransactionTable extends Table {
 
         $a = '11.11';
         $b = '22.22';
-        echo '==== testing: ' (double)$a + (double)$b;
+        echo '==== testing: ' .((double)$a + (double)$b);
 
 
         echo '<div class="table">';
