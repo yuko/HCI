@@ -65,7 +65,7 @@ class Controller {
 
     public function getCategoryNameForId($cateId) {
         if(empty($this->ctl_categories)) return 'null yanke';
-        else return sizeOf($this->ctl_categories);
+        else $this->ctl_categories->getId();
 
         for($i = 0; $i < sizeOf($this->ctl_categories); $i++) {
             if($this->ctl_categories[$i]->getCategoryId() == $cardId ) {
