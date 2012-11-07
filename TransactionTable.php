@@ -1,11 +1,7 @@
 <?php
 
 class TransactionTable extends Table {
-/*
-    protected $elements = array();
-    protected $showId;
-    protected $url;
- */
+  
     protected $ctl;
 
     function __construct($e, $u = null, $s = false, $c) {
@@ -16,10 +12,11 @@ class TransactionTable extends Table {
     // shows all
     public function render() {
 
+        /* works  todo: don't use double for money. revisit and clean
         $a = '11.11';
         $b = '22.22';
         echo '==== testing: ' .((double)$a + (double)$b);
-
+         */
 
         echo '<div class="table">';
         for($i = 0; $i < sizeOf($this->elements); $i++) {
