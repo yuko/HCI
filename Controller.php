@@ -62,6 +62,14 @@ class Controller {
     }
 
 
+
+    public function getCategoryNameForId($cateId) {
+        for($i = 0; $i < sizeOf($this->ctl_categories); $i++) {
+            if($this->ctl_categories[$i]->getCategoryId() == $cardId ) {
+                return $this->ctl_categories[$i]->getCategoryName();
+            }
+        }
+    }
 }
 
 ?>

@@ -6,11 +6,13 @@ class TransactionTable extends Table {
     protected $showId;
     protected $url;
  */
-    function __construct($e, $u = null, $s = false) {
+    protected $ctl;
+
+    function __construct($e, $u = null, $s = false, $c) {
         parent::__construct($e, $u, $s);
         //$this->elements = $e;dd
         //$this->url = $u;
-        //$this->showId = $s;
+        $this->ctl= $c;
     }
 
     public function render() {
@@ -19,7 +21,7 @@ class TransactionTable extends Table {
             echo '<div class="ui-grid-a">';
                 
             echo '<div class="ui-block-a">';
-            echo $this->elements[$i]->getDate();
+            echo $this->elements[$i]->getTransDate();
             echo '</div>';
 
 
@@ -29,7 +31,14 @@ class TransactionTable extends Table {
             if(!empty($this->url)) echo '</a>';
             echo '</div>';
 
- 
+
+            $cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
+
+            echo '<div class="ui-block-c">';
+            echo '$' .$cateName;
+            echo '</div>';
+
+
             echo '</div><!-- /ui-grid-a -->';
         }
         echo '</div><!-- /table  -->';

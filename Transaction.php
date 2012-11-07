@@ -23,7 +23,7 @@ class Transaction extends Entity {
         return $this->categoryId;
     }
 
-    public function getDate() {
+    public function getTransDate() {
         return $this->date;
     }
 
