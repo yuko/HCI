@@ -35,10 +35,11 @@ class Page {
     public function render() {
         echo '<div data-role="page" id="' .$this->id .'" data-title="' .$this->title .'">';
         
-        echo '<div data-role="header" data-position="fixed">';
-        if(!empty($this->nav))
+        if(!empty($this->nav)) {
+            echo '<div data-role="header" data-position="fixed">';
             $this->nav->render();
-        echo '</div><!-- /header -->';
+            echo '</div><!-- /header -->';
+        }
 
         echo '<div data-role="content">';
  

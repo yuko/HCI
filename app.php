@@ -79,7 +79,7 @@
 
     // set up pages
     $pages['index']->setHeader('Welcome!');
-    $pages['add']->setContent(
+    $pages['index']->setContent(
         '<div data-role="page" id="index" data-title="Money Tracker">
         <div data-role="content">
         <h2>Welcome!</h2>
