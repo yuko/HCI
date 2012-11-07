@@ -80,13 +80,14 @@
     // set up pages
     $pages['index']->setHeader('Welcome!');
     $pages['index']->setContent(
-        echo '<p>You are about to see my demo.</p>
+        '<p>You are about to see my demo.</p>
         <p>Even though the layout is designed to support tablet/computer size screens, as this is designed to be a phone app, I recomment you to proceed in a smaller window to get the better experience.</p>
         <p>Ready?</p>
         
         <div data-role="controlgroup" data-type="horizontal">
         <a href="#" data-role="button" data-inline="true" data-theme="b" onClick="window.open(\'http://hci-scarlett.herokuapp.com/app.php#add\',\'mywindow\',\'width=350,height=500\');">Open in a new window</a>
-        <a href="#add" data-role="button" data-inline="true" data-theme="c">Nah, stay in this window</a>'
+        <a href="#add" data-role="button" data-inline="true" data-theme="c">Nah, stay in this window</a>
+        </div>'
     );
 
 /*
