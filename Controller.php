@@ -51,6 +51,7 @@ class Controller {
         }
     }
 
+    // not tested
     public function getTransactionsForCard($cardId) {
         $temp = array();
         for($i = 0; $i < sizeOf($this->ctl_trans); $i++) {
@@ -64,17 +65,9 @@ class Controller {
 
 
     public function getCategoryNameForId($cateId) {
-/*
-        if(empty($this->ctl_categories)) return 'null yanke';
-        else {
-            return $this->ctl_categories[0]->getName();
-        }
-*/
-
         for($i = 0; $i < sizeOf($this->ctl_categories); $i++) {
             if($this->ctl_categories[$i]->getId() == $cateId ) {
-                //return $this->ctl_categories[$i]->getName();
-                return "cateId=" .$cateId .", " .$this->ctl_categories[$i]->getName();
+                return $this->ctl_categories[$i]->getName();
             }
         }
     }
