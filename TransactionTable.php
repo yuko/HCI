@@ -36,11 +36,10 @@ class TransactionTable extends Table {
             else {
                 //print_r($this->ctl->getCategories());
                 $cateName = $this->ctl->getCategoryNameForId(2);
-                echo '=============<br>';
             }
 
             echo '<div class="ui-block-c">';
-            echo '*** category name:' .$cateName;
+            echo '*** ' .$cateName;
             echo '</div>';
 
 
