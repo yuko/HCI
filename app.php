@@ -15,25 +15,6 @@
     include 'Table.php';
     include 'TransactionTable.php';
 
-/*a
-
-    // init cards
-    $cards = array();
-    $cards[] = new PaymentAccount('12345678', 'Visa #1234');
-    $cards[] = new PaymentAccount('23456789', 'Amex #2345');
-    $cards[] = new PaymentAccount('34567890', 'Citibank #3456');
-    $cards[] = new PaymentAccount('00000000', 'Cash');
-
-    // init categories
-    $categories = array();
-    $categories[] = new Category(0, 'Utilities');
-    $categories[] = new Category(1, 'Transportation');
-    $categories[] = new Category(2, 'Groceries');
-    $categories[] = new Category(3, 'Entertainment');
-    $categories[] = new Category(4, 'Eating out');
-    $categories[] = new Category(5, 'Miscellaneous');
- */
-
     // init controller
     $controller = new Controller();
     $controller->setCards(
@@ -58,6 +39,11 @@
         array(
             new Transaction(0, '', '10.23', '10/14/2012', 0, 1),
             new Transaction(1, '', '26.81', '10/16/2012', 0, 2),
+            new Transaction(2, '', '11.00', '10/16/2012', 0, 2),
+            new Transaction(3, '', '3.89', '10/19/2012', 0, 1),
+            new Transaction(4, '', '2.98', '10/20/2012', 0, 1),
+            new Transaction(5, '', '15.46', '10/20/2012', 0, 2),
+            new Transaction(6, '', '38.02', '10/24/2012', 0, 0),
         )
     );
 
