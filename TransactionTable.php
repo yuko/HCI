@@ -31,10 +31,10 @@ class TransactionTable extends Table {
             echo '</div>';
 
             //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
-            //$cateName = $this->elements[$i]->getCategoryId();
+            echo 'woot=' .$this->elements[$i]->getCategoryId();
             if(empty($this->ctl)) $cateName='ctl null';
             else {
-                //print_r($this->ctl->getCategories());
+                //$cateName = $this->ctl->getCategoryNameForId(2);
                 $cateName = $this->ctl->getCategoryNameForId(2);
             }
 
