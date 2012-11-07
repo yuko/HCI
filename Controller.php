@@ -64,14 +64,16 @@ class Controller {
 
 
     public function getCategoryNameForId($cateId) {
+/*
         if(empty($this->ctl_categories)) return 'null yanke';
         else {
             return $this->ctl_categories[0]->getName();
         }
+*/
 
         for($i = 0; $i < sizeOf($this->ctl_categories); $i++) {
-            if($this->ctl_categories[$i]->getCategoryId() == $cardId ) {
-                return $this->ctl_categories[$i]->getCategoryName();
+            if($this->ctl_categories[$i]->getId() == $cardId ) {
+                return $this->ctl_categories[$i]->getName();
             }
         }
     }
