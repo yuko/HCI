@@ -18,7 +18,7 @@ class TransactionTable extends Table {
     public function render() {
         echo '<div class="table">';
         for($i = 0; $i < sizeOf($this->elements); $i++) {
-            echo '<div class="ui-grid-a">';
+            echo '<div class="ui-grid-b">';
                 
             echo '<div class="ui-block-a">';
             echo $this->elements[$i]->getTransDate();
@@ -30,7 +30,6 @@ class TransactionTable extends Table {
             if(!empty($this->url)) echo '</a>';
             echo '</div>';
 
-
             //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
             $cateName = $this->elements[$i]->getCategoryId();
 
@@ -39,7 +38,7 @@ class TransactionTable extends Table {
             echo '</div>';
 
 
-            echo '</div><!-- /ui-grid-a -->';
+            echo '</div><!-- /ui-grid-b -->';
         }
         echo '</div><!-- /table  -->';
     }
