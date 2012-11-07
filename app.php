@@ -40,10 +40,10 @@
             new Transaction(0, '', '10.23', '10/14/2012', 0, 1),
             new Transaction(1, '', '26.81', '10/16/2012', 0, 2),
             new Transaction(2, '', '11.00', '10/16/2012', 0, 2),
-            new Transaction(3, '', '3.89', '10/19/2012', 0, 1),
-            new Transaction(4, '', '2.98', '10/20/2012', 0, 1),
-            new Transaction(5, '', '15.46', '10/20/2012', 0, 2),
-            new Transaction(6, '', '38.02', '10/24/2012', 0, 0),
+            new Transaction(3, '', '3.89', '10/19/2012', 1, 1),
+            new Transaction(4, '', '2.98', '10/20/2012', 2, 1),
+            new Transaction(5, '', '15.46', '10/20/2012', 1, 2),
+            new Transaction(6, '', '38.02', '10/24/2012', 1, 0),
         )
     );
 
@@ -60,7 +60,7 @@
 
     // init pages
     $pages = array();
-    $pages['index'] = new Page('index', 'Welcome!', null); 
+    $pages['index'] = new Page('index', 'Money Tracker', null); 
     $pages['add'] = new Page('add', 'Add', $nav_add); 
     $pages['add-date'] = new Page('add-date', 'Add date', $nav_add); 
     $pages['add-card'] = new Page('add-card', 'Add card', $nav_add); 
@@ -78,6 +78,23 @@
     $pages['settings-preferences'] = new Page('settings-preferences', 'Settings > Preferences', $nav_settings); 
 
     // set up pages
+    $pages['index']->setHeader('Welcome!');
+    $pages['add']->setContent(
+        '<div data-role="page" id="index" data-title="Money Tracker">
+        <div data-role="content">
+        <h2>Welcome!</h2>
+        <p>You are about to see my demo.</p>
+        <p>Even though the layout is designed to support tablet/computer size screens, as this is designed to be a phone app, I recomment you to proceed in a smaller window to get the better experience.</p>
+        <p>Ready?</p>
+        
+        <div data-role="controlgroup" data-type="horizontal">
+        <a href="#" data-role="button" data-inline="true" data-theme="b" onClick="window.open(\'http://hci-scarlett.herokuapp.com/app.php#add\',\'mywindow\',\'width=350,height=500\');">Open in a new window</a>
+        <a href="#add" data-role="button" data-inline="true" data-theme="c">Nah, stay in this window</a>
+        </div>
+        </div><!-- /content -->
+        </div><!-- /page -->'
+    );
+
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
     $pages['add']->addModule(new FormInput('app.php#add-date', 'Next', array(
