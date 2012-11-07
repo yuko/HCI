@@ -31,11 +31,11 @@ class TransactionTable extends Table {
             echo '</div>';
 
             //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
-            //echo 'woot=' .$this->elements[$i]->getCategoryId();
+            echo 'woot=' .$this->elements[$i]->getCategoryId();
             if(empty($this->ctl)) $cateName='ctl null';
             else {
-                //$cateName = $this->ctl->getCategoryNameForId(2);
-                $cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
+                $cateName = $this->ctl->getCategoryNameForId(3);
+                //$cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
             }
 
             echo '<div class="ui-block-c">';
