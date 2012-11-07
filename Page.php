@@ -32,38 +32,15 @@ class Page {
         $this->modules[] = $m;
     }
 
-    // todo - need this?
-    /*public function getUrlParam() {
-        echo "==============<br>";
-        print_r($_GET);
-        echo "<br>==============<br>";
-
-
-        $param = '';    
-        foreach($_GET as $key => $value) {
-            if($key != 'submit' && !empty($param)) {
-                $param .= '&' .$key .'=' .$value;
-            }
-        }
-
-
-        return $param;
-    }
-     */
-
-
     public function render() {
         echo '<div data-role="page" id="' .$this->id .'" data-title="' .$this->title .'">';
+        
         echo '<div data-role="header" data-position="fixed">';
-        $this->nav->render();
+        if(!empty($this->nav))
+            $this->nav->render();
         echo '</div><!-- /header -->';
 
         echo '<div data-role="content">';
-
-
-
-        //$this->getUrlParam();
- 
  
         $this->renderHeader();
         $this->renderSubheader();

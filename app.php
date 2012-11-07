@@ -74,7 +74,7 @@
 
     // init pages
     $pages = array();
-    //$pages['index'] = new Page('index', 'Add', $nav_add); 
+    $pages['index'] = new Page('index', 'Welcome!', null); 
     $pages['add'] = new Page('add', 'Add', $nav_add); 
     $pages['add-date'] = new Page('add-date', 'Add date', $nav_add); 
     $pages['add-card'] = new Page('add-card', 'Add card', $nav_add); 

@@ -27,7 +27,7 @@ class TransactionTable extends Table {
 
             echo '<div class="ui-block-b">';
             if(!empty($this->url)) echo '<a href="' .$this->url .'">';
-            echo $this->elements[$i]->getAmount()();
+            echo $this->elements[$i]->getAmount();
             if(!empty($this->url)) echo '</a>';
             echo '</div>';
 
