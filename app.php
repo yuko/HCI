@@ -79,6 +79,8 @@
 
     // set up pages
     $pages['index']->setHeader('Welcome!');
+    $pages['index']->setContent('where\s my contenets?');
+/*
     $pages['index']->setContent(
         '<div data-role="page" id="index" data-title="Money Tracker">
         <div data-role="content">
@@ -94,6 +96,7 @@
         </div><!-- /content -->
         </div><!-- /page -->'
     );
+*/
 
     $pages['add']->setHeader('Add');
     $pages['add']->setSubheader('How much did you spend? (step 1 of 4)');
