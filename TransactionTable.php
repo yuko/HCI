@@ -24,7 +24,6 @@ class TransactionTable extends Table {
             echo $this->elements[$i]->getTransDate();
             echo '</div>';
 
-
             echo '<div class="ui-block-b">';
             if(!empty($this->url)) echo '<a href="' .$this->url .'">';
             echo '$' .$this->elements[$i]->getAmount();
@@ -33,9 +32,10 @@ class TransactionTable extends Table {
 
 
             //$cateName = $$this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
+            $cateName = $this->ctl->getCategoryNameForId($this->elements[$i]->getCategoryId());
 
             echo '<div class="ui-block-c">';
-            echo '*** category name goes here';
+            echo '*** category name:' .$cateName;
             echo '</div>';
 
 
